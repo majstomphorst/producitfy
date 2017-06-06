@@ -1,14 +1,14 @@
 # Proposal - Producitfy
-## App studio - Maxim Stomphorst - 11436727
+## Programmeerproject - Maxim Stomphorst - 11436727
 ### The problem to be solved.
-De behoeften om studie / werk activiteiten bij te houden. Om vervolgens een overzicht tie bieden van de verrichten activiteiten per dag en of per week.
+De behoeften om studie / werk activiteiten bij te houden. Om vervolgens een overzicht te bieden van de verrichten activiteiten per dag en of per week.
 
 Een manier om een gebruiker te stimuleren om productief te zijn. 
 
 ### What features will be available to solve the problem.
 - Een manier om studie activiteiten te bewerken/ maken/ veranderen/ verwijderen. (met plaatjes)
-- Een manier om activiteiten bij de houden (een activiteit te loggen).
-- Een activiteit handmatig toe voegen. (als je de app niet bij de hand hebt hebt gehad.)
+- Een manier om activiteiten bij te houden (een activiteit te loggen).
+- Een activiteit handmatig toe voegen. (als je de app niet bij de hand hebt gehad.)
 - Een manier om je activiteiten terug te zien bij dag / week.
 
 
@@ -17,7 +17,7 @@ Een manier om een gebruiker te stimuleren om productief te zijn.
 
 
 ### How to store data.
-De keuze die ik had was SQLlite of Firebase, na overlegt met de TA's is er gekozen voor <b>Firebase</b>. <br>
+De keuze die ik had was SQLlite of Firebase, na overleg met de staff is er gekozen voor <b>Firebase</b>. <br>
 Omdat dit direct de mogenlijkheid bied om informatie te synchroniseren ook is de API implenentatie van Firebae gemakenlijker dan die van sqlite in [`swift`](https://github.com/stephencelis/SQLite.swift) 
 
 
@@ -34,11 +34,11 @@ Hier kan je de isntellingen van de app aanpassen.
 
 
 ### External components (online APIs, libraries etc.)
-In eerste instatie [Firebase](https://firebase.google.com/) 
+- [Firebase](https://firebase.google.com/) 
 
 
 ### Technical problems or limitations.
-1. De visualisatie van de activeiten in bar charts of pie chart. 
+1. De visualisatie van de activiteiten in bar charts of pie chart. [optional]
 2. Het opzoeken van specifieke activiteiten in firbase.
 
 
@@ -52,7 +52,7 @@ Deze app bied wel wat functie om je te helpen om te focuesen op een taak maar de
 Is en app die enkel een timer bied om je te helpen met werken wel zitten er meer functies onder deze zijn echter wel "pro" en kosten dus geld.
 
 - [Miracle Timer](https://itunes.apple.com/us/app/miracle-timer-be-productive-perfect-for-work-study/id1083895559?mt=8)<br>
-Deze app geeft je enkele de funcionaliteit om een bepaalde tijdseenheid gefocust te werken maar heeft geen functionalteit om bij de houden wat je hebt gedaan.
+Deze app geeft je enkele functies om een bepaalde tijdseenheid gefocust te werken maar heeft geen functie om bij te houden wat je hebt gedaan.
 
 ### Minimum features
 1. Het selecteren van een activiteit.<br> 

@@ -10,5 +10,8 @@ import UIKit
 
 class MyCollectionViewCell: UICollectionViewCell {
     
+    // MARK: - Outlets
+    
+    @IBOutlet weak var iconImage: UIImageView!
     @IBOutlet weak var myLabel: UILabel!
 }

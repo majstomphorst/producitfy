@@ -10,10 +10,22 @@ import UIKit
 import Firebase
 
 class mainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    
+    //MARK - outlets
+    @IBOutlet weak var timerLabel: UILabel!
+    
+    
+    // collectionview variabels
+    let reuseIdentifier = "cell"
+    var items = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
 
-    let reuseIdentifier = "cell" // also enter this string as the cell identifier in the storyboard
-    var items = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48"]
-
+    // timer variabels
+    var seconds = 60
+    var timer = Timer()
+    var isTimmerRunning = false
+    var resumeTapped = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +62,68 @@ class mainViewController: UIViewController, UICollectionViewDataSource, UICollec
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
         print("You selected cell #\(indexPath.item)!")
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction func startButton(_ sender: Any) {
+        
+        if isTimmerRunning == false {
+            runTimer()
+        } else if resumeTapped == true {
+            runTimer()
+        }
+        
+    }
+    
+    @IBAction func pauzeButton(_ sender: Any) {
+        
+        if resumeTapped == false {
+            timer.invalidate()
+            resumeTapped = true
+        } else {
+            runTimer()
+            resumeTapped = false
+        }
+       
+    }
+    
+    @IBAction func resetButton(_ sender: Any) {
+        
+        timer.invalidate()
+        seconds = 0
+        timerLabel.text = timeString(time: TimeInterval(seconds))
+        isTimmerRunning = false
+        
+    }
+    
+    // Mark: Functions
+    func runTimer() {
+        
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(mainViewController.updateTimer)), userInfo: nil, repeats: true)
+        isTimmerRunning = true
+        
+    }
+    
+    func updateTimer() {
+        
+        if seconds < 1 {
+            timer.invalidate()
+            //Send alert to indicate "time's up!"
+        } else {
+            seconds -= 1
+            timerLabel.text = timeString(time: TimeInterval(seconds))
+        }
+        
+    }
+    
+    func timeString(time:TimeInterval) -> String {
+        
+        let hours = Int(time) / 3600
+        let minutes = Int(time) / 60 % 60
+        let seconds = Int(time) % 60
+        
+        return String(format: "%02i:%02i:%02i", hours, minutes, seconds)
     }
 
 }

@@ -21,8 +21,9 @@ En een online database is toch veel stoerder dan een suffe SQL database ;)
  - procesBook.md
 
 ### Day 02/19 - 07`/06/17
-1. meeting
+1. Meeting
  - Talked about the app idea's.
 2. App develepment
  - Created simpel timer function.
-3.  
+3.  ?
+ - Created a designDocument.md 

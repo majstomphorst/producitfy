@@ -35,10 +35,10 @@ class MainViewController: UIViewController {
     
     // collectionview variabels
     let reuseIdentifier = "cell"
-    var items = ["1", "2", "3", "4", "5", "6", "7"]
+    var items = [10 , 20, 30, 40, 50, 60, 70]
 
     // timer variabels
-    var seconds = 60
+    var seconds = Int()
     var timer = Timer()
     var isTimmerRunning = false
     var resumeTapped = false
@@ -77,8 +77,10 @@ class MainViewController: UIViewController {
         
         if isTimmerRunning == false {
             runTimer()
+            isTimmerRunning = true
         } else if resumeTapped == true {
             runTimer()
+            isTimmerRunning = true
         }
         
     }
@@ -96,10 +98,10 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func resetButton(_ sender: Any) {
-        timer.invalidate()
-        seconds = 0
-        timerLabel.text = timeString(time: TimeInterval(seconds))
         isTimmerRunning = false
+        timer.invalidate()
+        timerLabel.text = timeString(time: TimeInterval(seconds))
+        
         
     }
     
@@ -114,8 +116,8 @@ class MainViewController: UIViewController {
     func updateTimer() {
         
         if seconds < 1 {
+             //Send alert to indicate "time's up!"
             timer.invalidate()
-            //Send alert to indicate "time's up!"
         } else {
             seconds -= 1
             timerLabel.text = timeString(time: TimeInterval(seconds))
@@ -153,7 +155,6 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         cell.iconImage.image = UIImage(named: iconInfo[indexPath.item].icon)
         // Use the outlet in our custom class to get a reference to the UILabel in the cell
         cell.myLabel.text = iconInfo[indexPath.item].label
-        
         return cell
         
     }
@@ -162,6 +163,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // handle tap events
+      
         print("You selected cell #\(indexPath.item)!")
         
     }
@@ -179,9 +181,12 @@ extension MainViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "hello"
+        return ("\(items[row]) Seconds")
     }
-
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        seconds = items[row]
+    }
     
     
 }

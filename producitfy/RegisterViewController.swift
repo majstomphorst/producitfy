@@ -1,14 +1,19 @@
 //
-//  ConformationViewController.swift
+//  RegisterViewController.swift
 //  producitfy
 //
-//  Created by Maxim Stomphorst on 07/06/2017.
+//  Created by Maxim Stomphorst on 08/06/2017.
 //  Copyright © 2017 M.a.j©. All rights reserved.
 //
 
 import UIKit
 
-class ConformationViewController: UIViewController {
+class RegisterViewController: UIViewController {
+    
+    //MARK: - Outlets
+    @IBOutlet weak var emailLabel: UITextField!
+    @IBOutlet weak var passwordLabel: UITextField!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,13 +26,10 @@ class ConformationViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - Actions
-    
-    // sends the user back to the privious screen
-    @IBAction func dismissButton(_ sender: Any) {
+
+    @IBAction func backToSignIn(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-
     /*
     // MARK: - Navigation
 
@@ -39,4 +41,3 @@ class ConformationViewController: UIViewController {
     */
 
 }
-

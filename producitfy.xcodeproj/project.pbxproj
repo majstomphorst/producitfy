@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0B87F8F48EA2AD47774A91B7 /* Pods_producitfy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE785268695BE3A989BE4A59 /* Pods_producitfy.framework */; };
 		2805A5BB1EE6E71600694247 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2805A5BA1EE6E71600694247 /* GoogleService-Info.plist */; };
+		28376AA01EE959EA0019A85D /* FireBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28376A9F1EE959EA0019A85D /* FireBase.swift */; };
+		28376AA21EE964DD0019A85D /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28376AA11EE964DD0019A85D /* SignInViewController.swift */; };
+		28376AA41EE968190019A85D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28376AA31EE968190019A85D /* RegisterViewController.swift */; };
 		286E173A1EE6CE7600C52810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286E17391EE6CE7600C52810 /* AppDelegate.swift */; };
 		286E173C1EE6CE7600C52810 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286E173B1EE6CE7600C52810 /* MainViewController.swift */; };
 		286E173F1EE6CE7600C52810 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 286E173D1EE6CE7600C52810 /* Main.storyboard */; };
@@ -24,6 +27,9 @@
 /* Begin PBXFileReference section */
 		149A42A97021528AFE8C0442 /* Pods-producitfy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-producitfy.release.xcconfig"; path = "Pods/Target Support Files/Pods-producitfy/Pods-producitfy.release.xcconfig"; sourceTree = "<group>"; };
 		2805A5BA1EE6E71600694247 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		28376A9F1EE959EA0019A85D /* FireBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FireBase.swift; sourceTree = "<group>"; };
+		28376AA11EE964DD0019A85D /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		28376AA31EE968190019A85D /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		286E17361EE6CE7600C52810 /* producitfy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = producitfy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		286E17391EE6CE7600C52810 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		286E173B1EE6CE7600C52810 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +58,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		28376A9D1EE955380019A85D /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				289A89121EE7384D003B9730 /* MyCollectionViewCell.swift */,
+				2891415B1EE8A4E7005EEDD9 /* TableViewCell.swift */,
+			);
+			name = CustomCells;
+			sourceTree = "<group>";
+		};
+		28376A9E1EE959230019A85D /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				28376A9F1EE959EA0019A85D /* FireBase.swift */,
+			);
+			name = Class;
+			sourceTree = "<group>";
+		};
 		286E172D1EE6CE7500C52810 = {
 			isa = PBXGroup;
 			children = (
@@ -74,12 +97,12 @@
 			isa = PBXGroup;
 			children = (
 				286E17391EE6CE7600C52810 /* AppDelegate.swift */,
-				289141581EE8A159005EEDD9 /* Designables */,
+				28376A9E1EE959230019A85D /* Class */,
 				287EDA5B1EE837590045693A /* ViewControllers */,
 				286E173D1EE6CE7600C52810 /* Main.storyboard */,
+				289141581EE8A159005EEDD9 /* Designables */,
 				286E17401EE6CE7600C52810 /* Assets.xcassets */,
 				286E17421EE6CE7600C52810 /* LaunchScreen.storyboard */,
-				2891415B1EE8A4E7005EEDD9 /* TableViewCell.swift */,
 				286E17451EE6CE7600C52810 /* Info.plist */,
 				2805A5BA1EE6E71600694247 /* GoogleService-Info.plist */,
 			);
@@ -92,7 +115,9 @@
 				286E173B1EE6CE7600C52810 /* MainViewController.swift */,
 				287EDA591EE8374D0045693A /* HistoryViewController.swift */,
 				289141561EE89D0A005EEDD9 /* ConformationViewController.swift */,
-				289A89121EE7384D003B9730 /* MyCollectionViewCell.swift */,
+				28376AA11EE964DD0019A85D /* SignInViewController.swift */,
+				28376AA31EE968190019A85D /* RegisterViewController.swift */,
+				28376A9D1EE955380019A85D /* CustomCells */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -248,9 +273,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				286E173C1EE6CE7600C52810 /* MainViewController.swift in Sources */,
+				28376AA41EE968190019A85D /* RegisterViewController.swift in Sources */,
 				286E173A1EE6CE7600C52810 /* AppDelegate.swift in Sources */,
+				28376AA01EE959EA0019A85D /* FireBase.swift in Sources */,
 				2891415A1EE8A1C8005EEDD9 /* DesignableConformationView.swift in Sources */,
 				289A89131EE7384D003B9730 /* MyCollectionViewCell.swift in Sources */,
+				28376AA21EE964DD0019A85D /* SignInViewController.swift in Sources */,
 				287EDA5A1EE8374D0045693A /* HistoryViewController.swift in Sources */,
 				2891415C1EE8A4E7005EEDD9 /* TableViewCell.swift in Sources */,
 				289141571EE89D0A005EEDD9 /* ConformationViewController.swift in Sources */,

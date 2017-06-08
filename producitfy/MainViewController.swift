@@ -20,6 +20,24 @@ struct IconInfo {
 }
 
 
+// to store al info that is send to Firebase
+struct ActivityInfo {
+    let iconInfo: IconInfo
+    let todo: String
+    let time: Int //????
+    let feeling: String
+    let haveDone: String
+    
+    init(withiconInfo iconInfo: IconInfo, todo: String, time: Int, feeling: String, haveDone: String) {
+        self.iconInfo = iconInfo
+        self.todo = todo
+        self.time = time
+        self.feeling = feeling
+        self.haveDone = haveDone
+    }
+}
+
+
 class MainViewController: UIViewController {
     
     

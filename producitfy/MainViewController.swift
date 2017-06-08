@@ -76,16 +76,10 @@ class MainViewController: UIViewController {
         do {
             try Auth.auth().signOut()
             
-            
             // if error this send a alert to the user with the reason why
         } catch {
             alertUser(title: "logout went wrong", message: error.localizedDescription)
         }
-        
-        
-        
-        
-        
         
         
         if let userId = Auth.auth().currentUser?.uid {

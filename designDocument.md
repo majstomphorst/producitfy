@@ -4,6 +4,8 @@
 
 
 ## An overview of your application
+![Design document](https://github.com/majstomphorst/producitfy/blob/master/doc/desingScreens.jpeg)
+
 ### main
 Je selecteerd aan welke taak je gaat werken (wiskunde), wat je gaat studeren (h1 en h2) en voor welke tijd je dit gaat doen (25min). 
 

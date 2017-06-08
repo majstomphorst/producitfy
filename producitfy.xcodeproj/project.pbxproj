@@ -79,6 +79,7 @@
 				286E173D1EE6CE7600C52810 /* Main.storyboard */,
 				286E17401EE6CE7600C52810 /* Assets.xcassets */,
 				286E17421EE6CE7600C52810 /* LaunchScreen.storyboard */,
+				2891415B1EE8A4E7005EEDD9 /* TableViewCell.swift */,
 				286E17451EE6CE7600C52810 /* Info.plist */,
 				2805A5BA1EE6E71600694247 /* GoogleService-Info.plist */,
 			);
@@ -92,7 +93,6 @@
 				287EDA591EE8374D0045693A /* HistoryViewController.swift */,
 				289141561EE89D0A005EEDD9 /* ConformationViewController.swift */,
 				289A89121EE7384D003B9730 /* MyCollectionViewCell.swift */,
-				2891415B1EE8A4E7005EEDD9 /* TableViewCell.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";

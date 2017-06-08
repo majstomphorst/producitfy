@@ -36,6 +36,8 @@ class MainViewController: UIViewController {
     // collectionview variabels
     let reuseIdentifier = "cell"
     var items = [10 , 20, 30, 40, 50, 60, 70]
+    
+    var time = ["1 min": 60]
 
     // timer variabels
     var seconds = Int()
@@ -98,10 +100,10 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func resetButton(_ sender: Any) {
+        
         isTimmerRunning = false
         timer.invalidate()
         timerLabel.text = timeString(time: TimeInterval(seconds))
-        
         
     }
     

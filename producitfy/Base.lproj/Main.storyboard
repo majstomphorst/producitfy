@@ -32,7 +32,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eyp-X9-h5P" id="GT8-ue-68s">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nuM-ET-IpQ">
@@ -252,10 +252,10 @@
             </objects>
             <point key="canvasLocation" x="509.60000000000002" y="-508.69565217391306"/>
         </scene>
-        <!--View Controller-->
+        <!--Conformation View Controller-->
         <scene sceneID="PR4-Z5-B8i">
             <objects>
-                <viewController id="BcZ-lI-c2b" sceneMemberID="viewController">
+                <viewController id="BcZ-lI-c2b" customClass="ConformationViewController" customModule="producitfy" customModuleProvider="target" sceneMemberID="viewController">
                     <visualEffectView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="4ek-Gl-8kW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -263,10 +263,68 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xEt-HI-TKX">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <state key="normal" title="Button"/>
+                                    <connections>
+                                        <action selector="dismissButton:" destination="BcZ-lI-c2b" eventType="touchUpInside" id="D9M-Fv-gN7"/>
+                                    </connections>
+                                </button>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YK5-ah-98T" customClass="DesignableConformationView" customModule="producitfy" customModuleProvider="target">
                                     <rect key="frame" x="32" y="64" width="311" height="539"/>
-                                    <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="tdT-bQ-gfL">
+                                            <rect key="frame" x="4" y="8" width="303" height="124"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7wm-mB-abV">
+                                                    <rect key="frame" x="55.5" y="0.0" width="192" height="64"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mij-qq-AVo">
+                                                            <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                                            <state key="normal" image="-">
+                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpC-rh-8IO">
+                                                            <rect key="frame" x="64" y="0.0" width="64" height="64"/>
+                                                            <state key="normal" image="-+">
+                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ZI-d2-lWs">
+                                                            <rect key="frame" x="128" y="0.0" width="64" height="64"/>
+                                                            <state key="normal" image="+">
+                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                        </button>
+                                                    </subviews>
+                                                </stackView>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MOT-c2-sI7">
+                                                    <rect key="frame" x="8" y="64" width="287" height="30"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8Z-58-Yan">
+                                                    <rect key="frame" x="8" y="94" width="287" height="30"/>
+                                                    <state key="normal" title="Button"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="p8Z-58-Yan" firstAttribute="leading" secondItem="tdT-bQ-gfL" secondAttribute="leading" constant="8" id="3xA-6b-qLP"/>
+                                                <constraint firstAttribute="trailing" secondItem="p8Z-58-Yan" secondAttribute="trailing" constant="8" id="SlU-Sh-1cJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="MOT-c2-sI7" secondAttribute="trailing" constant="8" id="jyu-Z2-9cU"/>
+                                                <constraint firstItem="MOT-c2-sI7" firstAttribute="leading" secondItem="tdT-bQ-gfL" secondAttribute="leading" constant="8" id="r83-pN-cg8"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.23137254900000001" green="0.34901960780000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="tintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="tdT-bQ-gfL" secondAttribute="trailing" constant="4" id="JYD-Lf-mG2"/>
+                                        <constraint firstItem="tdT-bQ-gfL" firstAttribute="leading" secondItem="YK5-ah-98T" secondAttribute="leading" constant="4" id="a7S-9R-A1l"/>
+                                        <constraint firstItem="tdT-bQ-gfL" firstAttribute="top" secondItem="YK5-ah-98T" secondAttribute="top" constant="8" id="iTs-se-3lS"/>
+                                    </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                             <real key="value" value="10"/>
@@ -276,9 +334,13 @@
                             </subviews>
                             <constraints>
                                 <constraint firstItem="YK5-ah-98T" firstAttribute="leading" secondItem="jSf-Wn-doV" secondAttribute="leading" constant="32" id="8PN-id-wUy"/>
+                                <constraint firstItem="xEt-HI-TKX" firstAttribute="top" secondItem="jSf-Wn-doV" secondAttribute="top" id="Cdy-xg-Llh"/>
+                                <constraint firstAttribute="bottom" secondItem="xEt-HI-TKX" secondAttribute="bottom" id="DGZ-Ed-cfA"/>
                                 <constraint firstAttribute="trailing" secondItem="YK5-ah-98T" secondAttribute="trailing" constant="32" id="N7Q-Bx-Ysf"/>
                                 <constraint firstAttribute="bottom" secondItem="YK5-ah-98T" secondAttribute="bottom" constant="64" id="VRS-Nt-YIw"/>
                                 <constraint firstItem="YK5-ah-98T" firstAttribute="top" secondItem="jSf-Wn-doV" secondAttribute="top" constant="64" id="Xcj-V9-Bd4"/>
+                                <constraint firstAttribute="trailing" secondItem="xEt-HI-TKX" secondAttribute="trailing" id="ego-Mp-Ar4"/>
+                                <constraint firstItem="xEt-HI-TKX" firstAttribute="leading" secondItem="jSf-Wn-doV" secondAttribute="leading" id="fJs-63-vfP"/>
                             </constraints>
                         </view>
                         <blurEffect style="regular"/>
@@ -286,7 +348,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UrA-kp-ZTV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1257" y="-509"/>
+            <point key="canvasLocation" x="1256.8" y="-509.59520239880067"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="4Mj-0Z-8tV">
@@ -308,4 +370,9 @@
             <point key="canvasLocation" x="-443" y="-180"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="+" width="64" height="64"/>
+        <image name="-" width="64" height="64"/>
+        <image name="-+" width="64" height="64"/>
+    </resources>
 </document>

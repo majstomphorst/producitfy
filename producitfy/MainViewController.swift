@@ -25,23 +25,29 @@ struct ActivityInfo {
     let iconInfo: IconInfo
     let todo: String
     let time: Int //????
-    let feeling: String
-    let haveDone: String
+    var feeling: String
+    var haveDone: String
     
-    init(withiconInfo iconInfo: IconInfo, todo: String, time: Int, feeling: String, haveDone: String) {
+    init(withiconInfo iconInfo: IconInfo, todo: String, time: Int) {
         self.iconInfo = iconInfo
         self.todo = todo
         self.time = time
+        self.feeling = String()
+        self.haveDone = String()
+    }
+    
+    mutating func completing(feeling: String, haveDone: String){
         self.feeling = feeling
         self.haveDone = haveDone
     }
+    
 }
 
 
 class MainViewController: UIViewController {
     
     
-    //MARK - outlets
+    //MARK - Outlets
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var timePicker: UIPickerView!
     
@@ -66,12 +72,28 @@ class MainViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         
+        
+        do {
+            try Auth.auth().signOut()
+            
+            
+            // if error this send a alert to the user with the reason why
+        } catch {
+            alertUser(title: "logout went wrong", message: error.localizedDescription)
+        }
+        
+        
+        
+        
+        
+        
+        
         if let userId = Auth.auth().currentUser?.uid {
             print("nono")
             print(userId)
         } else {
             print("hello")
-            // performSegue(withIdentifier: "signinSegue", sender: nil)
+            performSegue(withIdentifier: "signinSegue", sender: nil)
         }
         
     }
@@ -86,10 +108,6 @@ class MainViewController: UIViewController {
         iconInfo.append(IconInfo(withicon: "4", label: "label4"))
         iconInfo.append(IconInfo(withicon: "5", label: "label5"))
         iconInfo.append(IconInfo(withicon: "6", label: "label6"))
-        
-        
-        
-        
         
         
 //        rotationPicker = 90 * (.pi / 180)
@@ -225,3 +243,4 @@ extension MainViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     
     
 }
+

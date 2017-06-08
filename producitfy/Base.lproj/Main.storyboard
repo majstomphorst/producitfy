@@ -418,6 +418,9 @@
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MaI-02-lHP">
                                                             <rect key="frame" x="143.5" y="0.0" width="135.5" height="30"/>
                                                             <state key="normal" title="Sign in"/>
+                                                            <connections>
+                                                                <action selector="signinButton:" destination="9cO-pH-tsq" eventType="touchUpInside" id="SMk-Ry-FdU"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
@@ -516,6 +519,9 @@
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RUd-2B-KUi">
                                                             <rect key="frame" x="143.5" y="0.0" width="135.5" height="30"/>
                                                             <state key="normal" title="Register"/>
+                                                            <connections>
+                                                                <action selector="registerButton:" destination="SqP-Ia-VnE" eventType="touchUpInside" id="V6y-22-8Dn"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>

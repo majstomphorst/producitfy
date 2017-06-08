@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="khw-fI-BDn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="skz-A1-5ge">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -84,7 +84,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sO5-65-4yE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="510" y="800"/>
+            <point key="canvasLocation" x="-113" y="785"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="H5G-Eg-cfG">
@@ -214,7 +214,7 @@
                                                 <rect key="frame" x="265" y="0.0" width="96" height="30"/>
                                                 <state key="normal" title="Convermation"/>
                                                 <connections>
-                                                    <segue destination="BcZ-lI-c2b" kind="presentation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="oC5-qW-mzM"/>
+                                                    <segue destination="BcZ-lI-c2b" kind="presentation" identifier="conformationSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="oC5-qW-mzM"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -246,7 +246,7 @@
                     <connections>
                         <outlet property="timePicker" destination="3cq-Pu-YnO" id="Dxh-Nh-K6g"/>
                         <outlet property="timerLabel" destination="CDu-bB-loH" id="whi-VT-1u8"/>
-                        <segue destination="9cO-pH-tsq" kind="presentation" identifier="signInSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="89Y-zT-RT3"/>
+                        <segue destination="9cO-pH-tsq" kind="presentation" identifier="signinSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="cAC-GC-qcu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ycm-cY-Wvt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -368,7 +368,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8aP-9L-EN2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-443" y="-180"/>
+            <point key="canvasLocation" x="-604" y="-501"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="kNd-rT-hn6">
@@ -412,7 +412,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="135.5" height="30"/>
                                                             <state key="normal" title="To register"/>
                                                             <connections>
-                                                                <segue destination="SqP-Ia-VnE" kind="presentation" identifier="RegisterSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="hKr-Md-N3M"/>
+                                                                <segue destination="SqP-Ia-VnE" kind="presentation" identifier="registerSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="hKr-Md-N3M"/>
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MaI-02-lHP">
@@ -458,6 +458,7 @@
                         </view>
                         <blurEffect style="regular"/>
                     </visualEffectView>
+                    <navigationItem key="navigationItem" id="UX7-1r-Or7"/>
                     <connections>
                         <outlet property="emailLabel" destination="6UW-Ch-Axj" id="toO-2B-gNF"/>
                         <outlet property="passwordLabel" destination="fPu-IJ-CEA" id="PJq-bN-OoJ"/>

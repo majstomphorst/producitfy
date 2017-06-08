@@ -64,9 +64,20 @@ class MainViewController: UIViewController {
     var resumeTapped = false
     
     
+    override func viewDidAppear(_ animated: Bool) {
+        
+        if let userId = Auth.auth().currentUser?.uid {
+            print("nono")
+            print(userId)
+        } else {
+            print("hello")
+            // performSegue(withIdentifier: "signinSegue", sender: nil)
+        }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         iconInfo.append(IconInfo(withicon: "0", label: "label0"))
         iconInfo.append(IconInfo(withicon: "1", label: "label1"))
@@ -75,6 +86,10 @@ class MainViewController: UIViewController {
         iconInfo.append(IconInfo(withicon: "4", label: "label4"))
         iconInfo.append(IconInfo(withicon: "5", label: "label5"))
         iconInfo.append(IconInfo(withicon: "6", label: "label6"))
+        
+        
+        
+        
         
         
 //        rotationPicker = 90 * (.pi / 180)
@@ -136,6 +151,7 @@ class MainViewController: UIViewController {
     func updateTimer() {
         
         if seconds < 1 {
+            performSegue(withIdentifier: "conformationSegue", sender: nil)
              //Send alert to indicate "time's up!"
             timer.invalidate()
         } else {
@@ -171,7 +187,6 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         // get a reference to our storyboard cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! MyCollectionViewCell
         
-        print(indexPath.item)
         cell.iconImage.image = UIImage(named: iconInfo[indexPath.item].icon)
         // Use the outlet in our custom class to get a reference to the UILabel in the cell
         cell.myLabel.text = iconInfo[indexPath.item].label

@@ -179,13 +179,12 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3cq-Pu-YnO">
-                                        <rect key="frame" x="0.0" y="218" width="375" height="216"/>
-                                        <connections>
-                                            <outlet property="dataSource" destination="khw-fI-BDn" id="EWC-lP-ihd"/>
-                                            <outlet property="delegate" destination="khw-fI-BDn" id="E05-oR-CvK"/>
-                                        </connections>
-                                    </pickerView>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="eCq-is-CEz" userLabel="Time Picker">
+                                        <rect key="frame" x="27.5" y="218" width="320" height="216"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="518711528.98758203">
+                                            <!--2017-06-09 14:32:08 +0000-->
+                                        </date>
+                                    </datePicker>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="azA-LH-CxG">
                                         <rect key="frame" x="7" y="434" width="361" height="30"/>
                                         <subviews>
@@ -227,11 +226,9 @@
                                     <constraint firstAttribute="trailing" secondItem="OzN-LC-Eyz" secondAttribute="trailing" id="HZC-Ns-inc"/>
                                     <constraint firstItem="CDu-bB-loH" firstAttribute="leading" secondItem="XKF-Yq-65B" secondAttribute="leading" id="Mnm-i1-ycM"/>
                                     <constraint firstItem="3VL-I6-wXQ" firstAttribute="top" secondItem="OzN-LC-Eyz" secondAttribute="bottom" id="Yt0-yj-3b1"/>
-                                    <constraint firstItem="3cq-Pu-YnO" firstAttribute="leading" secondItem="XKF-Yq-65B" secondAttribute="leading" id="cnl-yZ-Bqv"/>
                                     <constraint firstItem="3VL-I6-wXQ" firstAttribute="leading" secondItem="XKF-Yq-65B" secondAttribute="leading" id="dAU-K6-bwe"/>
                                     <constraint firstItem="OzN-LC-Eyz" firstAttribute="leading" secondItem="XKF-Yq-65B" secondAttribute="leading" id="fM1-yj-hLT"/>
                                     <constraint firstItem="CDu-bB-loH" firstAttribute="top" secondItem="3VL-I6-wXQ" secondAttribute="bottom" id="mMS-ZL-MhK"/>
-                                    <constraint firstAttribute="trailing" secondItem="3cq-Pu-YnO" secondAttribute="trailing" id="vaK-eZ-qG7"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -244,7 +241,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="favorites" id="sWu-Vq-9LG"/>
                     <connections>
-                        <outlet property="timePicker" destination="3cq-Pu-YnO" id="Dxh-Nh-K6g"/>
+                        <outlet property="timePicker" destination="eCq-is-CEz" id="67X-Yk-vtk"/>
                         <outlet property="timerLabel" destination="CDu-bB-loH" id="whi-VT-1u8"/>
                         <segue destination="9cO-pH-tsq" kind="presentation" identifier="signinSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="cAC-GC-qcu"/>
                     </connections>
@@ -408,18 +405,18 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Gsj-ob-lq7">
                                                     <rect key="frame" x="0.0" y="104.5" width="279" height="30"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOE-bA-NXx">
-                                                            <rect key="frame" x="0.0" y="0.0" width="135.5" height="30"/>
-                                                            <state key="normal" title="To register"/>
-                                                            <connections>
-                                                                <segue destination="SqP-Ia-VnE" kind="presentation" identifier="registerSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="hKr-Md-N3M"/>
-                                                            </connections>
-                                                        </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MaI-02-lHP">
-                                                            <rect key="frame" x="143.5" y="0.0" width="135.5" height="30"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="135.5" height="30"/>
                                                             <state key="normal" title="Sign in"/>
                                                             <connections>
                                                                 <action selector="signinButton:" destination="9cO-pH-tsq" eventType="touchUpInside" id="SMk-Ry-FdU"/>
+                                                            </connections>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOE-bA-NXx">
+                                                            <rect key="frame" x="143.5" y="0.0" width="135.5" height="30"/>
+                                                            <state key="normal" title="To register"/>
+                                                            <connections>
+                                                                <segue destination="SqP-Ia-VnE" kind="presentation" identifier="registerSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="hKr-Md-N3M"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>

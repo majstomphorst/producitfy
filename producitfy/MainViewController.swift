@@ -49,7 +49,7 @@ class MainViewController: UIViewController {
     
     //MARK - Outlets
     @IBOutlet weak var timerLabel: UILabel!
-    @IBOutlet weak var timePicker: UIPickerView!
+    @IBOutlet weak var timePicker: UIDatePicker!
     
     var iconInfo = [IconInfo]()
     
@@ -60,8 +60,6 @@ class MainViewController: UIViewController {
     // collectionview variabels
     let reuseIdentifier = "cell"
     var items = [10 , 20, 30, 40, 50, 60, 70]
-    
-    var time = ["1 min": 60]
 
     // timer variabels
     var seconds = Int()
@@ -70,16 +68,19 @@ class MainViewController: UIViewController {
     var resumeTapped = false
     
     
+    
     override func viewDidAppear(_ animated: Bool) {
         
+        print("FIND ME ")
+        print(timePicker.countDownDuration)
         
-        do {
-            try Auth.auth().signOut()
-            
-            // if error this send a alert to the user with the reason why
-        } catch {
-            alertUser(title: "logout went wrong", message: error.localizedDescription)
-        }
+//        do {
+//            try Auth.auth().signOut()
+//            
+//            // if error this send a alert to the user with the reason why
+//        } catch {
+//            alertUser(title: "logout went wrong", message: error.localizedDescription)
+//        }
         
         
         if let userId = Auth.auth().currentUser?.uid {
@@ -121,6 +122,8 @@ class MainViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction func startButton(_ sender: Any) {
+        
+        seconds = Int(timePicker.countDownDuration)
         
         if isTimmerRunning == false {
             runTimer()
@@ -217,24 +220,24 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     
 }
 
-extension MainViewController: UIPickerViewDataSource, UIPickerViewDelegate {
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return items.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return ("\(items[row]) Seconds")
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        seconds = items[row]
-    }
-    
-    
-}
+//extension MainViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+//    
+////    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+////        return 1
+////    }
+////    
+////    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+////        return items.count
+////    }
+////    
+////    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+////        return ("\(items[row]) Seconds")
+////    }
+////    
+////    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+////        seconds = items[row]
+////    }
+//    
+//    
+//}
 

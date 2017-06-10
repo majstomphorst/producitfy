@@ -32,14 +32,22 @@ class ConformationViewController: UIViewController {
             let day = calendar.component(.day, from: date as Date)
             let month = calendar.component(.month, from: date as Date)
             let year = calendar.component(.year, from: date as Date)
-            print("the current date =  \(day):\(month):\(year):")
+            let datum = "\(day):\(month):\(year)"
+            
+            print("the current date =  \(day):\(month):\(year)")
             
             let hour = calendar.component(.hour, from: date as Date)
             print(day)
             print(hour)
             
+            let reference = Database.database().reference().child("\(userId)/activitys/\(datum)")
             
-            //let reference = Database.database().reference().child(userId).child("activitys").child(<#T##String#>)
+            
+            let vluggeJapie = ["iconImage": ActivityInfo.activityInfo.iconImage,
+                               "iconLabel": ActivityInfo.activityInfo.iconLabel,
+                               "todo": ActivityInfo.activityInfo.todo,
+                               "time": ActivityInfo.activityInfo.time,] as [String : Any]
+            reference.updateChildValues(vluggeJapie)
             
         }
 

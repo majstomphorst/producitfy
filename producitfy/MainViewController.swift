@@ -22,34 +22,38 @@ struct IconInfo {
 
 // to store al info that is send to Firebase
 struct ActivityInfo {
-    let iconInfo: IconInfo
-    let todo: String
-    let time: Int //????
+    
+    static var activityInfo = ActivityInfo()
+    
+    var iconImage: String
+    var iconLabel: String
+    var todo: String
+    var time: Int
     var feeling: String
     var haveDone: String
     
-    init(withiconInfo iconInfo: IconInfo, todo: String, time: Int) {
-        self.iconInfo = iconInfo
-        self.todo = todo
-        self.time = time
+    init() {
+        self.iconImage = String()
+        self.iconLabel = String()
+        self.todo = String()
+        self.time = Int()
         self.feeling = String()
         self.haveDone = String()
     }
-    
-    mutating func completing(feeling: String, haveDone: String){
-        self.feeling = feeling
-        self.haveDone = haveDone
-    }
+
     
 }
 
 
 class MainViewController: UIViewController {
     
-    
     //MARK - Outlets
+    
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var timePicker: UIDatePicker!
+    @IBOutlet weak var activityCollection: UICollectionView!
+    @IBOutlet weak var todoText: UITextField!
+    
     
     var iconInfo = [IconInfo]()
     
@@ -62,7 +66,6 @@ class MainViewController: UIViewController {
     var timer = Timer()
     var isTimmerRunning = false
     var resumeTapped = false
-    
     
     
     override func viewDidAppear(_ animated: Bool) {
@@ -107,11 +110,6 @@ class MainViewController: UIViewController {
         
         // Do any additional setup after loading the view, typically from a nib.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     
     // MARK: - Actions
@@ -119,6 +117,10 @@ class MainViewController: UIViewController {
     @IBAction func startButton(_ sender: Any) {
         
         seconds = Int(timePicker.countDownDuration)
+        ActivityInfo.activityInfo.time = seconds
+        print(todoText.text!)
+        ActivityInfo.activityInfo.todo = todoText.text!
+        
         
         if isTimmerRunning == false {
             runTimer()
@@ -161,6 +163,9 @@ class MainViewController: UIViewController {
     func updateTimer() {
         
         if seconds < 1 {
+            
+            print(ActivityInfo.activityInfo)
+            
             performSegue(withIdentifier: "conformationSegue", sender: nil)
              //Send alert to indicate "time's up!"
             timer.invalidate()
@@ -178,6 +183,7 @@ class MainViewController: UIViewController {
         let seconds = Int(time) % 60
         
         return String(format: "%02i:%02i:%02i", hours, minutes, seconds)
+        
     }
 
 }
@@ -188,6 +194,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     // tell the collection view how many cells to make
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         return self.iconInfo.count
     }
     
@@ -200,6 +207,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         cell.iconImage.image = UIImage(named: iconInfo[indexPath.item].icon)
         // Use the outlet in our custom class to get a reference to the UILabel in the cell
         cell.myLabel.text = iconInfo[indexPath.item].label
+        
         return cell
         
     }
@@ -207,9 +215,12 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     // MARK: - UICollectionViewDelegate protocol
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // handle tap events
-      
-        print("You selected cell #\(indexPath.item)!")
+        // handle tap event
+        ActivityInfo.activityInfo.iconImage = "\(indexPath.row)"
+        ActivityInfo.activityInfo.iconLabel = "\(indexPath.row)"
+        
+        print("You selected cell #\(indexPath.item)0!")
+        
         
     }
     

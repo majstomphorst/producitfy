@@ -164,18 +164,18 @@
                                             <outlet property="delegate" destination="khw-fI-BDn" id="x9w-ho-rx3"/>
                                         </connections>
                                     </collectionView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3VL-I6-wXQ">
-                                        <rect key="frame" x="0.0" y="128" width="375" height="150"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDu-bB-loH">
-                                        <rect key="frame" x="134.5" y="278" width="106.5" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDu-bB-loH">
+                                        <rect key="frame" x="134.5" y="128" width="106.5" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3VL-I6-wXQ" userLabel="todoText">
+                                        <rect key="frame" x="0.0" y="158" width="375" height="150"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                     <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCq-is-CEz" userLabel="Time Picker">
                                         <rect key="frame" x="27.5" y="308" width="320" height="216"/>
                                         <date key="date" timeIntervalSinceReferenceDate="518711528.98758203">
@@ -234,8 +234,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="yoO-mk-5NL"/>
                     <connections>
+                        <outlet property="activityCollection" destination="OzN-LC-Eyz" id="ij7-81-Ig6"/>
                         <outlet property="timePicker" destination="eCq-is-CEz" id="67X-Yk-vtk"/>
-                        <outlet property="timerLabel" destination="CDu-bB-loH" id="whi-VT-1u8"/>
+                        <outlet property="timerLabel" destination="CDu-bB-loH" id="41X-sA-Q1w"/>
+                        <outlet property="todoText" destination="3VL-I6-wXQ" id="OcR-9i-zJm"/>
                         <segue destination="9cO-pH-tsq" kind="presentation" identifier="signinSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="cAC-GC-qcu"/>
                     </connections>
                 </viewController>

@@ -63,7 +63,7 @@ class RegisterViewController: UIViewController {
                 
                 print("done!")
                 // when the user creation succeded send user to message view
-                self.dismiss(animated: true, completion: nil)
+                self.performSegue(withIdentifier: "returnToMainView", sender: nil)
             })
         })
     }

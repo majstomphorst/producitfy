@@ -71,6 +71,9 @@ class MainViewController: UIViewController {
     
     
     // MARK: - Actions
+    @IBAction func returnToMainView(segue: UIStoryboardSegue) {}
+    
+    
     @IBAction func logOutButton(_ sender: Any) {
         
         do {

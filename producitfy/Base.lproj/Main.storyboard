@@ -574,9 +574,11 @@
                     <connections>
                         <outlet property="emailLabel" destination="lEe-ME-L3E" id="3jL-R9-DdA"/>
                         <outlet property="passwordLabel" destination="fTe-om-W4r" id="BpQ-cf-wmK"/>
+                        <segue destination="7zi-Op-me3" kind="unwind" identifier="returnToMainView" unwindAction="returnToMainViewWithSegue:" id="B4o-qZ-bQ9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4rK-Mh-KXA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="7zi-Op-me3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1271" y="-1173"/>
         </scene>

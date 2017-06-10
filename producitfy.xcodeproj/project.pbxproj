@@ -22,6 +22,7 @@
 		2891415A1EE8A1C8005EEDD9 /* DesignableConformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289141591EE8A1C8005EEDD9 /* DesignableConformationView.swift */; };
 		2891415C1EE8A4E7005EEDD9 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2891415B1EE8A4E7005EEDD9 /* TableViewCell.swift */; };
 		289A89131EE7384D003B9730 /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289A89121EE7384D003B9730 /* MyCollectionViewCell.swift */; };
+		28EA6B101EEC4235003932B5 /* ActivityInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EA6B0F1EEC4235003932B5 /* ActivityInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		289141591EE8A1C8005EEDD9 /* DesignableConformationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableConformationView.swift; sourceTree = "<group>"; };
 		2891415B1EE8A4E7005EEDD9 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		289A89121EE7384D003B9730 /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
+		28EA6B0F1EEC4235003932B5 /* ActivityInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityInfo.swift; sourceTree = "<group>"; };
 		923C61F2D62644005CE33DCC /* Pods-producitfy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-producitfy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-producitfy/Pods-producitfy.debug.xcconfig"; sourceTree = "<group>"; };
 		DE785268695BE3A989BE4A59 /* Pods_producitfy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_producitfy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -92,6 +94,7 @@
 				28376AA51EE989180019A85D /* ViewController+Error.swift */,
 				287EDA5B1EE837590045693A /* ViewControllers */,
 				286E173D1EE6CE7600C52810 /* Main.storyboard */,
+				28EA6B0E1EEC3C34003932B5 /* Structs */,
 				289141581EE8A159005EEDD9 /* Designables */,
 				286E17401EE6CE7600C52810 /* Assets.xcassets */,
 				286E17421EE6CE7600C52810 /* LaunchScreen.storyboard */,
@@ -105,8 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				286E173B1EE6CE7600C52810 /* MainViewController.swift */,
-				287EDA591EE8374D0045693A /* HistoryViewController.swift */,
 				289141561EE89D0A005EEDD9 /* ConformationViewController.swift */,
+				287EDA591EE8374D0045693A /* HistoryViewController.swift */,
 				28376AA11EE964DD0019A85D /* SignInViewController.swift */,
 				28376AA31EE968190019A85D /* RegisterViewController.swift */,
 				28376A9D1EE955380019A85D /* CustomCells */,
@@ -120,6 +123,14 @@
 				289141591EE8A1C8005EEDD9 /* DesignableConformationView.swift */,
 			);
 			name = Designables;
+			sourceTree = "<group>";
+		};
+		28EA6B0E1EEC3C34003932B5 /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				28EA6B0F1EEC4235003932B5 /* ActivityInfo.swift */,
+			);
+			name = Structs;
 			sourceTree = "<group>";
 		};
 		61CB7393124515D8A4EC03A7 /* Pods */ = {
@@ -273,6 +284,7 @@
 				28376AA21EE964DD0019A85D /* SignInViewController.swift in Sources */,
 				287EDA5A1EE8374D0045693A /* HistoryViewController.swift in Sources */,
 				2891415C1EE8A4E7005EEDD9 /* TableViewCell.swift in Sources */,
+				28EA6B101EEC4235003932B5 /* ActivityInfo.swift in Sources */,
 				289141571EE89D0A005EEDD9 /* ConformationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

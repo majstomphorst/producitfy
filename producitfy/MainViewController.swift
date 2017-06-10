@@ -19,32 +19,6 @@ struct IconInfo {
     }
 }
 
-
-// to store al info that is send to Firebase
-struct ActivityInfo {
-    
-    static var activityInfo = ActivityInfo()
-    
-    var iconImage: String
-    var iconLabel: String
-    var todo: String
-    var time: Int
-    var feeling: String
-    var haveDone: String
-    
-    init() {
-        self.iconImage = String()
-        self.iconLabel = String()
-        self.todo = String()
-        self.time = Int()
-        self.feeling = String()
-        self.haveDone = String()
-    }
-
-    
-}
-
-
 class MainViewController: UIViewController {
     
     //MARK - Outlets
@@ -225,25 +199,4 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
 }
-
-//extension MainViewController: UIPickerViewDataSource, UIPickerViewDelegate {
-//    
-////    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-////        return 1
-////    }
-////    
-////    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-////        return items.count
-////    }
-////    
-////    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-////        return ("\(items[row]) Seconds")
-////    }
-////    
-////    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-////        seconds = items[row]
-////    }
-//    
-//    
-//}
 

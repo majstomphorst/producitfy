@@ -98,11 +98,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XKF-Yq-65B">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="XKF-Yq-65B">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OzN-LC-Eyz">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
+                                        <rect key="frame" x="8" y="0.0" width="359" height="128"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="128" id="ZRM-us-K1d"/>
@@ -165,25 +165,25 @@
                                         </connections>
                                     </collectionView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDu-bB-loH">
-                                        <rect key="frame" x="134.5" y="128" width="106.5" height="30"/>
+                                        <rect key="frame" x="8" y="133" width="359" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3VL-I6-wXQ" userLabel="todoText">
-                                        <rect key="frame" x="0.0" y="158" width="375" height="150"/>
+                                        <rect key="frame" x="8" y="168" width="359" height="130"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCq-is-CEz" userLabel="Time Picker">
-                                        <rect key="frame" x="27.5" y="308" width="320" height="216"/>
+                                        <rect key="frame" x="8" y="303" width="359" height="216"/>
                                         <date key="date" timeIntervalSinceReferenceDate="518711528.98758203">
                                             <!--2017-06-09 14:32:08 +0000-->
                                         </date>
                                     </datePicker>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="azA-LH-CxG">
-                                        <rect key="frame" x="7" y="524" width="361" height="30"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="azA-LH-CxG">
+                                        <rect key="frame" x="8" y="524" width="359" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GKq-lJ-T9u">
                                                 <rect key="frame" x="0.0" y="0.0" width="34" height="30"/>
@@ -193,21 +193,21 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHy-d9-0S6">
-                                                <rect key="frame" x="84" y="0.0" width="42" height="30"/>
+                                                <rect key="frame" x="84" y="0.0" width="41.5" height="30"/>
                                                 <state key="normal" title="Pauze"/>
                                                 <connections>
                                                     <action selector="pauzeButton:" destination="khw-fI-BDn" eventType="touchUpInside" id="z9S-Zx-eVg"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f2V-TL-aeE">
-                                                <rect key="frame" x="176" y="0.0" width="39" height="30"/>
+                                                <rect key="frame" x="175.5" y="0.0" width="39" height="30"/>
                                                 <state key="normal" title="Reset"/>
                                                 <connections>
                                                     <action selector="resetButton:" destination="khw-fI-BDn" eventType="touchUpInside" id="eWo-EQ-zn1"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55Z-Bh-5vz">
-                                                <rect key="frame" x="265" y="0.0" width="96" height="30"/>
+                                                <rect key="frame" x="264.5" y="0.0" width="94.5" height="30"/>
                                                 <state key="normal" title="Convermation"/>
                                                 <connections>
                                                     <segue destination="BcZ-lI-c2b" kind="presentation" identifier="conformationSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="oC5-qW-mzM"/>
@@ -217,10 +217,16 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailingMargin" secondItem="3VL-I6-wXQ" secondAttribute="trailing" id="Mwo-09-tbL"/>
-                                    <constraint firstAttribute="trailing" secondItem="OzN-LC-Eyz" secondAttribute="trailing" id="U1D-qf-lNJ"/>
-                                    <constraint firstItem="OzN-LC-Eyz" firstAttribute="leading" secondItem="XKF-Yq-65B" secondAttribute="leading" id="XoH-3h-UJ4"/>
-                                    <constraint firstItem="3VL-I6-wXQ" firstAttribute="leading" secondItem="XKF-Yq-65B" secondAttribute="leadingMargin" id="kS4-Wd-D17"/>
+                                    <constraint firstItem="CDu-bB-loH" firstAttribute="leading" secondItem="XKF-Yq-65B" secondAttribute="leading" constant="8" id="3ZH-3V-o9Y"/>
+                                    <constraint firstAttribute="trailing" secondItem="azA-LH-CxG" secondAttribute="trailing" constant="8" id="K4b-Pq-gmV"/>
+                                    <constraint firstItem="azA-LH-CxG" firstAttribute="leading" secondItem="XKF-Yq-65B" secondAttribute="leading" constant="8" id="NrD-iP-4qY"/>
+                                    <constraint firstAttribute="trailing" secondItem="eCq-is-CEz" secondAttribute="trailing" constant="8" id="OJ5-Oa-kyn"/>
+                                    <constraint firstItem="OzN-LC-Eyz" firstAttribute="leading" secondItem="XKF-Yq-65B" secondAttribute="leading" constant="8" id="OOY-D4-1zs"/>
+                                    <constraint firstItem="eCq-is-CEz" firstAttribute="leading" secondItem="XKF-Yq-65B" secondAttribute="leading" constant="8" id="PeC-9I-ozi"/>
+                                    <constraint firstAttribute="trailing" secondItem="3VL-I6-wXQ" secondAttribute="trailing" constant="8" id="QU2-cf-3ee"/>
+                                    <constraint firstItem="3VL-I6-wXQ" firstAttribute="leading" secondItem="XKF-Yq-65B" secondAttribute="leading" constant="8" id="evH-aG-LSp"/>
+                                    <constraint firstAttribute="trailing" secondItem="OzN-LC-Eyz" secondAttribute="trailing" constant="8" id="iN7-UE-Aax"/>
+                                    <constraint firstAttribute="trailing" secondItem="CDu-bB-loH" secondAttribute="trailing" constant="8" id="yKc-nz-JrG"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -266,8 +272,8 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YK5-ah-98T" customClass="DesignableConformationView" customModule="producitfy" customModuleProvider="target">
                                     <rect key="frame" x="32" y="64" width="311" height="539"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="tdT-bQ-gfL">
-                                            <rect key="frame" x="4" y="8" width="303" height="124"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tdT-bQ-gfL">
+                                            <rect key="frame" x="4" y="8" width="303" height="150"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7wm-mB-abV">
                                                     <rect key="frame" x="55.5" y="0.0" width="192" height="64"/>
@@ -293,14 +299,19 @@
                                                     </subviews>
                                                 </stackView>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MOT-c2-sI7">
-                                                    <rect key="frame" x="8" y="64" width="287" height="30"/>
+                                                    <rect key="frame" x="8" y="74" width="287" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8Z-58-Yan">
-                                                    <rect key="frame" x="8" y="94" width="287" height="30"/>
-                                                    <state key="normal" title="Button"/>
+                                                    <rect key="frame" x="8" y="114" width="287" height="36"/>
+                                                    <color key="backgroundColor" red="0.2212261255181478" green="0.55080974102020264" blue="0.19106051494364706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <state key="normal" title="Save"/>
+                                                    <connections>
+                                                        <action selector="SaveButton:" destination="BcZ-lI-c2b" eventType="touchUpInside" id="dJM-bf-Od2"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -320,7 +331,7 @@
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                            <real key="value" value="10"/>
+                                            <real key="value" value="20"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>

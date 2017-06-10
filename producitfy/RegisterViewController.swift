@@ -14,19 +14,7 @@ class RegisterViewController: UIViewController {
     //MARK: - Outlets
     @IBOutlet weak var emailLabel: UITextField!
     @IBOutlet weak var passwordLabel: UITextField!
-    
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     @IBAction func backToSignIn(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -42,6 +30,7 @@ class RegisterViewController: UIViewController {
         Auth.auth().createUser(withEmail: email, password: password, completion: {
             (user, error) in
             
+            
             // if error display alert with error information
             if error != nil {
                 self.alertUser(title: "Creating user went wrong",
@@ -49,7 +38,8 @@ class RegisterViewController: UIViewController {
                 return
             }
             
-            // getting the curent userI
+            print("created user!")
+            // getting the curent userId
             guard let userId = user?.uid else {
                 return
             }
@@ -73,7 +63,7 @@ class RegisterViewController: UIViewController {
                 
                 print("done!")
                 // when the user creation succeded send user to message view
-                // self.performSegue(withIdentifier: "backToMessage", sender: nil)
+                self.dismiss(animated: true, completion: nil)
             })
         })
     }

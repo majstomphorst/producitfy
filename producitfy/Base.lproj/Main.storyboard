@@ -238,7 +238,13 @@
                             <constraint firstItem="l9k-fi-6Nl" firstAttribute="top" secondItem="XKF-Yq-65B" secondAttribute="bottom" id="qa3-pd-0SD"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="yoO-mk-5NL"/>
+                    <navigationItem key="navigationItem" id="yoO-mk-5NL">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="lGl-gc-dkE">
+                            <connections>
+                                <action selector="logOutButton:" destination="khw-fI-BDn" id="AyL-0S-Vem"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="activityCollection" destination="OzN-LC-Eyz" id="ij7-81-Ig6"/>
                         <outlet property="timePicker" destination="eCq-is-CEz" id="67X-Yk-vtk"/>
@@ -406,7 +412,7 @@
                                                     <rect key="frame" x="0.0" y="66.5" width="279" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Gsj-ob-lq7">
                                                     <rect key="frame" x="0.0" y="104.5" width="279" height="30"/>
@@ -507,7 +513,7 @@
                                                     <rect key="frame" x="0.0" y="66.5" width="279" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="95f-hZ-GAL">
                                                     <rect key="frame" x="0.0" y="104.5" width="279" height="30"/>

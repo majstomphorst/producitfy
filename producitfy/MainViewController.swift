@@ -46,7 +46,6 @@ class MainViewController: UIViewController {
         
         // check if user is signin or not
         if let userId = Auth.auth().currentUser?.uid {
-            print("nono")
             print(userId)
         } else {
             print("hello")
@@ -57,17 +56,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        do {
-//            try Auth.auth().signOut()
-//            
-//            // if error this send a alert to the user with the reason why
-//        } catch {
-//            alertUser(title: "logout went wrong", message: error.localizedDescription)
-//        }
-        
-        
-        
+
         iconInfo.append(IconInfo(withicon: "0", label: "label0"))
         iconInfo.append(IconInfo(withicon: "1", label: "label1"))
         iconInfo.append(IconInfo(withicon: "2", label: "label2"))
@@ -77,16 +66,24 @@ class MainViewController: UIViewController {
         iconInfo.append(IconInfo(withicon: "6", label: "label6"))
         
         
-//        rotationPicker = 90 * (.pi / 180)
-//        timePicker.transform = CGAffineTransform(rotationAngle: rotationPicker)
-        
-        
-        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
     
     // MARK: - Actions
+    @IBAction func logOutButton(_ sender: Any) {
+        
+        do {
+            try Auth.auth().signOut()
+            
+            performSegue(withIdentifier: "signinSegue", sender: nil)
+            
+            // if error this send a alert to the user with the reason why
+        } catch {
+            alertUser(title: "logout went wrong", message: error.localizedDescription)
+        }
+        
+    }
     
     @IBAction func startButton(_ sender: Any) {
         

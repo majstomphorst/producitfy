@@ -53,10 +53,6 @@ class MainViewController: UIViewController {
     
     var iconInfo = [IconInfo]()
     
-    // picker view
-    var rotationPicker = CGFloat ()
-    
-    
     // collectionview variabels
     let reuseIdentifier = "cell"
     var items = [10 , 20, 30, 40, 50, 60, 70]
@@ -71,18 +67,7 @@ class MainViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         
-        print("FIND ME ")
-        print(timePicker.countDownDuration)
-        
-//        do {
-//            try Auth.auth().signOut()
-//            
-//            // if error this send a alert to the user with the reason why
-//        } catch {
-//            alertUser(title: "logout went wrong", message: error.localizedDescription)
-//        }
-        
-        
+        // check if user is signin or not
         if let userId = Auth.auth().currentUser?.uid {
             print("nono")
             print(userId)
@@ -95,6 +80,16 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        do {
+//            try Auth.auth().signOut()
+//            
+//            // if error this send a alert to the user with the reason why
+//        } catch {
+//            alertUser(title: "logout went wrong", message: error.localizedDescription)
+//        }
+        
+        
         
         iconInfo.append(IconInfo(withicon: "0", label: "label0"))
         iconInfo.append(IconInfo(withicon: "1", label: "label1"))

@@ -179,7 +179,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="5" translatesAutoresizingMaskIntoConstraints="NO" id="eCq-is-CEz" userLabel="Time Picker">
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="5" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eCq-is-CEz" userLabel="Time Picker">
                                         <rect key="frame" x="27.5" y="218" width="320" height="216"/>
                                         <date key="date" timeIntervalSinceReferenceDate="518711528.98758203">
                                             <!--2017-06-09 14:32:08 +0000-->
@@ -231,8 +231,15 @@
                                     <constraint firstItem="CDu-bB-loH" firstAttribute="top" secondItem="3VL-I6-wXQ" secondAttribute="bottom" id="mMS-ZL-MhK"/>
                                 </constraints>
                             </stackView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sf7-Kn-p7n">
+                                <rect key="frame" x="-16" y="-16" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="4rX-lg-ZXC"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="XKF-Yq-65B" firstAttribute="leading" secondItem="ORf-vW-1pw" secondAttribute="leading" id="2hc-Tq-T1o"/>
                             <constraint firstAttribute="trailing" secondItem="XKF-Yq-65B" secondAttribute="trailing" id="4hT-13-g5G"/>
@@ -248,7 +255,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ycm-cY-Wvt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="509.60000000000002" y="-508.69565217391306"/>
+            <point key="canvasLocation" x="562" y="-510"/>
         </scene>
         <!--Conformation View Controller-->
         <scene sceneID="PR4-Z5-B8i">
@@ -394,13 +401,13 @@
                                                     <rect key="frame" x="0.0" y="28.5" width="279" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fPu-IJ-CEA">
                                                     <rect key="frame" x="0.0" y="66.5" width="279" height="30"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                                 </textField>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Gsj-ob-lq7">
                                                     <rect key="frame" x="0.0" y="104.5" width="279" height="30"/>

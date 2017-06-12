@@ -11,6 +11,15 @@ import Firebase
 
 class ConformationViewController: UIViewController {
 
+    
+    //MARK: - Outlets
+    
+    @IBOutlet weak var sadButtonLabel: UIButton!
+    @IBOutlet weak var neutralButtonLabel: UIButton!
+    @IBOutlet weak var happyButtonLabel: UIButton!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,6 +32,43 @@ class ConformationViewController: UIViewController {
     }
     
     // MARK: - Actions
+    
+    @IBAction func sadButton(_ sender: Any) {
+        
+        if sadButtonLabel.backgroundColor == UIColor.blue {
+            ActivityInfo.activityInfo.feeling = 3
+            sadButtonLabel.backgroundColor = UIColor.clear
+        } else {
+            ActivityInfo.activityInfo.feeling = -1
+            sadButtonLabel.backgroundColor = UIColor.blue
+        }
+        
+    }
+    
+    @IBAction func neutralButton(_ sender: Any) {
+        
+        if neutralButtonLabel.backgroundColor == UIColor.blue {
+            ActivityInfo.activityInfo.feeling = 3
+            neutralButtonLabel.backgroundColor = UIColor.clear
+        } else {
+            ActivityInfo.activityInfo.feeling = 0
+            neutralButtonLabel.backgroundColor = UIColor.blue
+        }
+        
+    }
+    
+    @IBAction func happyButton(_ sender: Any) {
+        
+        if happyButtonLabel.backgroundColor == UIColor.blue {
+            ActivityInfo.activityInfo.feeling = 3
+            happyButtonLabel.backgroundColor = UIColor.clear
+        } else {
+            ActivityInfo.activityInfo.feeling = 1
+            happyButtonLabel.backgroundColor = UIColor.blue
+        }
+    }
+    
+    
     @IBAction func SaveButton(_ sender: Any) {
         print(ActivityInfo.activityInfo)
         if let userId = Auth.auth().currentUser?.uid {
@@ -41,19 +87,18 @@ class ConformationViewController: UIViewController {
             print(hour)
             
             let reference = Database.database().reference().child("\(userId)/activitys/\(datum)")
-            
+
             
             let vluggeJapie = ["iconImage": ActivityInfo.activityInfo.iconImage,
                                "iconLabel": ActivityInfo.activityInfo.iconLabel,
                                "todo": ActivityInfo.activityInfo.todo,
-                               "time": ActivityInfo.activityInfo.time,] as [String : Any]
-            reference.updateChildValues(vluggeJapie)
-            
-        }
+                               "time": ActivityInfo.activityInfo.time,
+                               "feeling": ActivityInfo.activityInfo.feeling,
+                               "haveDone": ActivityInfo.activityInfo.haveDone]
+                               as [String : Any]
 
-        
-        
-        
+            reference.updateChildValues(vluggeJapie)
+        }
         
     }
     
@@ -61,16 +106,8 @@ class ConformationViewController: UIViewController {
     @IBAction func dismissButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
+    
 
 }
 

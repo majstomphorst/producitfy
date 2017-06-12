@@ -17,7 +17,7 @@ struct ActivityInfo {
     var iconLabel: String
     var todo: String
     var time: Int
-    var feeling: String
+    var feeling: Int
     var haveDone: String
     
     init() {
@@ -25,7 +25,7 @@ struct ActivityInfo {
         self.iconLabel = String()
         self.todo = String()
         self.time = Int()
-        self.feeling = String()
+        self.feeling = Int()
         self.haveDone = String()
     }
     

@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Hisotry -->
+        <!--History View Controller-->
         <scene sceneID="mI3-Of-cX1">
             <objects>
                 <viewController id="361-54-pi8" customClass="HistoryViewController" customModule="producitfy" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,7 +32,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eyp-X9-h5P" id="GT8-ue-68s">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nuM-ET-IpQ">
@@ -61,7 +61,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Hisotry " id="uhz-aF-nDX"/>
+                    <navigationItem key="navigationItem" id="uhz-aF-nDX">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="lWr-2y-aYk">
+                            <rect key="frame" x="112.5" y="7" width="150" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Week"/>
+                                <segment title="Month"/>
+                            </segments>
+                        </segmentedControl>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M9v-Zb-siS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -278,40 +288,52 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YK5-ah-98T" customClass="DesignableConformationView" customModule="producitfy" customModuleProvider="target">
                                     <rect key="frame" x="32" y="64" width="311" height="539"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="tdT-bQ-gfL">
-                                            <rect key="frame" x="4" y="8" width="303" height="150"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="tdT-bQ-gfL">
+                                            <rect key="frame" x="4" y="8" width="303" height="250"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7wm-mB-abV">
-                                                    <rect key="frame" x="55.5" y="0.0" width="192" height="64"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7wm-mB-abV">
+                                                    <rect key="frame" x="45.5" y="0.0" width="212" height="64"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mij-qq-AVo">
                                                             <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
                                                             <state key="normal" image="-">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="sadButton:" destination="BcZ-lI-c2b" eventType="touchUpInside" id="ske-qh-qoT"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpC-rh-8IO">
-                                                            <rect key="frame" x="64" y="0.0" width="64" height="64"/>
+                                                            <rect key="frame" x="74" y="0.0" width="64" height="64"/>
                                                             <state key="normal" image="-+">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="neutralButton:" destination="BcZ-lI-c2b" eventType="touchUpInside" id="EYe-HN-Few"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ZI-d2-lWs">
-                                                            <rect key="frame" x="128" y="0.0" width="64" height="64"/>
+                                                            <rect key="frame" x="148" y="0.0" width="64" height="64"/>
                                                             <state key="normal" image="+">
                                                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="happyButton:" destination="BcZ-lI-c2b" eventType="touchUpInside" id="DHB-wu-aqv"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MOT-c2-sI7">
-                                                    <rect key="frame" x="8" y="74" width="287" height="30"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MOT-c2-sI7">
+                                                    <rect key="frame" x="8" y="94" width="287" height="90"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="90" id="6rp-74-eUm"/>
+                                                    </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8Z-58-Yan">
-                                                    <rect key="frame" x="8" y="114" width="287" height="36"/>
+                                                    <rect key="frame" x="8" y="214" width="287" height="36"/>
                                                     <color key="backgroundColor" red="0.2212261255181478" green="0.55080974102020264" blue="0.19106051494364706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <state key="normal" title="Save"/>
@@ -355,6 +377,11 @@
                         </view>
                         <blurEffect style="regular"/>
                     </visualEffectView>
+                    <connections>
+                        <outlet property="happyButtonLabel" destination="8ZI-d2-lWs" id="A80-S4-JzY"/>
+                        <outlet property="neutralButtonLabel" destination="gpC-rh-8IO" id="AlK-EA-XzC"/>
+                        <outlet property="sadButtonLabel" destination="Mij-qq-AVo" id="nWF-GL-AX6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UrA-kp-ZTV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

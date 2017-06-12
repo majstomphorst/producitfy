@@ -9,6 +9,9 @@
 import UIKit
 
 class HistoryViewController: UIViewController {
+    
+    
+    let items = ["Henk","Hans","Kees"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,14 +40,17 @@ class HistoryViewController: UIViewController {
 extension HistoryViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
         
+        cell.historyLabel.text = items[indexPath.row]
         
         return cell
     }
+    
+    
     
 }

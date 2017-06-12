@@ -10,6 +10,7 @@ import UIKit
 
 class EditPhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,17 +26,21 @@ class EditPhotoViewController: UIViewController, UIImagePickerControllerDelegate
     @IBAction func imagePress(_ sender: Any) {
         
         let picker = UIImagePickerController()
-        picker.sourceType = .photoLibrary
-        picker.mediaTypes = [kCIAttributeTypeImage as String]
         picker.delegate = self
         
-        present(picker, animated: true, completion: nil)
+        picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        picker.allowsEditing = false
+        
+        self.present(picker, animated: true, completion: nil)
         
         print("taptap")
     }
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        _ = info[UIImagePickerControllerOriginalImage] as! UIImage
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            
+            imageView.image = image
+        }
         
         
         print("hello")

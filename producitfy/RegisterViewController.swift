@@ -24,7 +24,7 @@ class RegisterViewController: UIViewController {
         
         // collect information form form
         let email = emailLabel.text!
-        let password = emailLabel.text!
+        let password = passwordLabel.text!
         
         // this creates a user with the information in the register form
         Auth.auth().createUser(withEmail: email, password: password, completion: {

@@ -72,10 +72,13 @@
                             </segments>
                         </segmentedControl>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Mcv-RV-5yL" id="WaX-PT-lSn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M9v-Zb-siS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1448.8" y="165.96701649175412"/>
+            <point key="canvasLocation" x="1214" y="266"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Cck-oY-AAa">
@@ -94,9 +97,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sO5-65-4yE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2196" y="171.36431784107947"/>
+            <point key="canvasLocation" x="1991" y="258"/>
         </scene>
-        <!--Main View Controller-->
+        <!--Main-->
         <scene sceneID="H5G-Eg-cfG">
             <objects>
                 <viewController id="khw-fI-BDn" customClass="MainViewController" customModule="producitfy" customModuleProvider="target" sceneMemberID="viewController">
@@ -248,7 +251,7 @@
                             <constraint firstItem="l9k-fi-6Nl" firstAttribute="top" secondItem="XKF-Yq-65B" secondAttribute="bottom" id="qa3-pd-0SD"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="yoO-mk-5NL">
+                    <navigationItem key="navigationItem" title="Main" id="yoO-mk-5NL">
                         <barButtonItem key="leftBarButtonItem" title="SignOut" id="lGl-gc-dkE">
                             <connections>
                                 <action selector="logOutButton:" destination="khw-fI-BDn" id="AyL-0S-Vem"/>
@@ -379,13 +382,14 @@
                     </visualEffectView>
                     <connections>
                         <outlet property="happyButtonLabel" destination="8ZI-d2-lWs" id="A80-S4-JzY"/>
+                        <outlet property="haveDoneField" destination="MOT-c2-sI7" id="7vm-BB-mur"/>
                         <outlet property="neutralButtonLabel" destination="gpC-rh-8IO" id="AlK-EA-XzC"/>
                         <outlet property="sadButtonLabel" destination="Mij-qq-AVo" id="nWF-GL-AX6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UrA-kp-ZTV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2196" y="-509.59520239880067"/>
+            <point key="canvasLocation" x="1966" y="-510"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="4Mj-0Z-8tV">

@@ -22,12 +22,10 @@ struct IconInfo {
 class MainViewController: UIViewController {
     
     //MARK - Outlets
-    
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var timePicker: UIDatePicker!
     @IBOutlet weak var activityCollection: UICollectionView!
     @IBOutlet weak var todoText: UITextField!
-    
     
     var iconInfo = [IconInfo]()
     
@@ -192,6 +190,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         // handle tap event
         ActivityInfo.activityInfo.iconImage = "\(indexPath.row)"
         ActivityInfo.activityInfo.iconLabel = "\(indexPath.row)"
+        
         
         print("You selected cell #\(indexPath.item)0!")
         

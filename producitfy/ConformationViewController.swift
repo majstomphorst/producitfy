@@ -17,8 +17,7 @@ class ConformationViewController: UIViewController {
     @IBOutlet weak var sadButtonLabel: UIButton!
     @IBOutlet weak var neutralButtonLabel: UIButton!
     @IBOutlet weak var happyButtonLabel: UIButton!
-    
-    
+    @IBOutlet weak var haveDoneField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,23 +69,29 @@ class ConformationViewController: UIViewController {
     
     
     @IBAction func SaveButton(_ sender: Any) {
-        print(ActivityInfo.activityInfo)
+        ActivityInfo.activityInfo.haveDone = haveDoneField.text!
+        
         if let userId = Auth.auth().currentUser?.uid {
             
             let date = NSDate()
             let calendar = NSCalendar.current
+            
+            
+            
+            let hours = calendar.component(.hour, from: date as Date)
+            let minutes = calendar.component(.minute, from: date as Date)
+            let seconds = calendar.component(.second, from: date as Date)
             let day = calendar.component(.day, from: date as Date)
             let month = calendar.component(.month, from: date as Date)
             let year = calendar.component(.year, from: date as Date)
-            let datum = "\(day):\(month):\(year)"
+            let week = calendar.component(.weekOfYear, from: date as Date)
             
-            print("the current date =  \(day):\(month):\(year)")
+            let datum = String(format: "%02i:%02i:%02i:%02i:%02i:%02i:%04i"
+                , hours, minutes, seconds, day, week, month, year)
             
-            let hour = calendar.component(.hour, from: date as Date)
-            print(day)
-            print(hour)
             
-            let reference = Database.database().reference().child("\(userId)/activitys/\(datum)")
+            
+            let reference = Database.database().reference().child("\(userId)/\(datum)")
 
             
             let vluggeJapie = ["iconImage": ActivityInfo.activityInfo.iconImage,

@@ -7,15 +7,54 @@
 //
 
 import UIKit
+import Firebase
 
 class HistoryViewController: UIViewController {
     
     
-    let items = ["Henk","Hans","Kees"]
+    @IBOutlet weak var tableView: UITableView!
+    var items = [String]()
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.items = [String]()
+        
+        if let userId = Auth.auth().currentUser?.uid {
+            
+            // getting al "messages" data
+            Database.database().reference().child(userId).observeSingleEvent(of: .value, with: { (snapshot) in
+                
+                
+                // interpeting the made "snapshot" as a dictionary
+                if let act = snapshot.value as? NSDictionary {
+                    
+                    for key in act.allKeys {
+                        
+                        let dict = act[key] as! NSDictionary
+                        
+                        self.items.append(dict["todo"] as! String)
+                        
+                    }
+                    
+                    self.tableView.reloadData()
+                    
+                }
+                
+                
+            }, withCancel: { (error) in
+                print(error.localizedDescription)
+            })
+            
+        }
+    }
+    
+ 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        
         // Do any additional setup after loading the view.
     }
 
@@ -25,15 +64,7 @@ class HistoryViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+  
 
 }
 

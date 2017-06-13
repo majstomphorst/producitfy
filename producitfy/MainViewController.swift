@@ -17,6 +17,17 @@ struct IconInfo {
         self.icon = icon
         self.label = label
     }
+    
+//    func getImg() -> UIImage {
+//        
+//        
+//        return UIImage
+//    }
+//    
+//    func getLabel() -> String {
+//        
+//        return UIImage
+//    }
 }
 
 class MainViewController: UIViewController {
@@ -31,8 +42,7 @@ class MainViewController: UIViewController {
     
     // collectionview variabels
     let reuseIdentifier = "cell"
-    var items = [10 , 20, 30, 40, 50, 60, 70]
-
+    
     // timer variabels
     var seconds = Int()
     var timer = Timer()
@@ -54,14 +64,44 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        if let uid = Auth.auth().currentUser?.uid {
+            
+            
+            Database.database().reference().child("preferene").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
+                print("find me!")
+                print(snapshot)
+                
+                print("find me!02")
+                print(snapshot.key)
+            
+                if let imagdict = snapshot.value as? Dictionary<String, String> {
+                    print(imagdict.keys)
+                    
+                    for key in imagdict.keys {
+                        
+                        self.iconInfo.append(IconInfo(withicon: imagdict[key]!, label: key))
+                    }
+                    self.activityCollection.reloadData()
+                    
+                    
+                }
+            })
+            
+            
+        }
+        
+        
+        
 
-        iconInfo.append(IconInfo(withicon: "0", label: "label0"))
-        iconInfo.append(IconInfo(withicon: "1", label: "label1"))
-        iconInfo.append(IconInfo(withicon: "2", label: "label2"))
-        iconInfo.append(IconInfo(withicon: "3", label: "label3"))
-        iconInfo.append(IconInfo(withicon: "4", label: "label4"))
-        iconInfo.append(IconInfo(withicon: "5", label: "label5"))
-        iconInfo.append(IconInfo(withicon: "6", label: "label6"))
+//        iconInfo.append(IconInfo(withicon: "0", label: "label0"))
+//        iconInfo.append(IconInfo(withicon: "1", label: "label1"))
+//        iconInfo.append(IconInfo(withicon: "2", label: "label2"))
+//        iconInfo.append(IconInfo(withicon: "3", label: "label3"))
+//        iconInfo.append(IconInfo(withicon: "4", label: "label4"))
+//        iconInfo.append(IconInfo(withicon: "5", label: "label5"))
+//        iconInfo.append(IconInfo(withicon: "6", label: "label6"))
         
         
         // Do any additional setup after loading the view, typically from a nib.
@@ -136,8 +176,6 @@ class MainViewController: UIViewController {
         
         if seconds < 1 {
             
-            print(ActivityInfo.activityInfo)
-            
             performSegue(withIdentifier: "conformationSegue", sender: nil)
              //Send alert to indicate "time's up!"
             timer.invalidate()
@@ -173,10 +211,32 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     // make a cell for each cell index path
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        
+        
+        
         // get a reference to our storyboard cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! MyCollectionViewCell
         
-        cell.iconImage.image = UIImage(named: iconInfo[indexPath.item].icon)
+        let url = URL(string: iconInfo[indexPath.row].icon)
+        
+        
+        let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
+            
+            
+            if error == nil {
+                // on the main thread
+                DispatchQueue.main.async {
+                    print("??")
+                    // Assigning image data to Image placeholder
+                    cell.iconImage.image = UIImage(data: data!)
+                    
+                }
+            }
+        }
+        task.resume()
+        
+        
+        // cell.iconImage.image = UIImage(named: iconInfo[indexPath.item].icon)
         // Use the outlet in our custom class to get a reference to the UILabel in the cell
         cell.myLabel.text = iconInfo[indexPath.item].label
         

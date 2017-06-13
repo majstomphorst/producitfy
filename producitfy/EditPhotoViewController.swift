@@ -81,21 +81,7 @@ class EditPhotoViewController: UIViewController, UIImagePickerControllerDelegate
                                 return
                             }
                             
-                            print("done!")
                         })
-                        
-//                        ref.child(userId!).updateChildValues(imageInfo, withCompletionBlock: {
-//                            (error, reffrence) in
-//                            
-//                            if error != nil {
-//                                self.alertUser(title: "Saving image info detials error",
-//                                               message: error!.localizedDescription)
-//                                return
-//                            }
-//                            
-//                            print("done!")
-//                            
-//                        })
                         
                     }
 

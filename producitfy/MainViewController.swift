@@ -212,8 +212,6 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         
-        
-        
         // get a reference to our storyboard cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! MyCollectionViewCell
         
@@ -250,6 +248,10 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         // handle tap event
         ActivityInfo.activityInfo.iconImage = "\(indexPath.row)"
         ActivityInfo.activityInfo.iconLabel = "\(indexPath.row)"
+        
+        self.activityCollection.cellForItem(at: indexPath)?.isHighlighted = true
+        
+        
         
         
         print("You selected cell #\(indexPath.item)0!")

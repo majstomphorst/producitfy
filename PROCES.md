@@ -34,4 +34,43 @@ En een online database is toch veel stoerder dan een suffe SQL database ;)
 2. App develepment
  - Had a lot of annoying segue bugs.
  - I find it annoying to write down what my idea's are for struct and classes. I got a a general idea of the flow of the app but this is not set in stone. So what I will write Will is Very likely change.
- - But i think before the weekend a pre alpha build should be ready. 
+ - But i think before the weekend a pre alpha build should be ready.
+
+### Day 04/19 - 09/06/17
+1. Meeting
+ - talkt about the app progress and the idea's see mail.
+2. App develpment
+ - Extended the basis ui. 
+ - Created selectable buttons.
+ - Created a uitableview
+
+### Day 05/19 - 10/06/17
+1. Meeting
+ - 
+2. App develpment 
+ - extended the UI 
+ - Removed a lot of bug that i had with the login and registration
+ - played around with time and dat in swift to create a not to store the information in firebas
+
+### Day 06/19 - 11/06/17
+1. meeting
+ - no meeting weekend! 
+2. App develpment
+ - Updated some smal thing read a lot of tutorial.
+
+### Day 07/19 - 12/06/17
+1. meeting
+- I was late. had to meet with my coach school related for next year.
+2. App develpment
+- finished the backend for the Alpha version!
+- the UI is still very meh.
+
+### Day 08/19 - 13/06/17
+1. Meeting
+- see mail. 
+2. App develpment
+- made a way to upload image to firebase
+- updated the collection view to import a users specifik images and label! 
+
+ 
+ 

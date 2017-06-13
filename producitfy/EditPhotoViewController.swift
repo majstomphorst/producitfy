@@ -12,6 +12,8 @@ import Firebase
 class EditPhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var activityNameLabel: UITextField!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +47,9 @@ class EditPhotoViewController: UIViewController, UIImagePickerControllerDelegate
             
             let userid = Auth.auth().currentUser?.uid
             
-            let storeRef = Storage.storage().reference().child("\(userid!)/image.png")
+            let name = self.activityNameLabel.text!
+            
+            let storeRef = Storage.storage().reference().child("\(userid!)/\(name).png")
             
             let uploadData = UIImagePNGRepresentation(image)
             
@@ -60,7 +64,6 @@ class EditPhotoViewController: UIViewController, UIImagePickerControllerDelegate
                     print(metadata as Any)
             })
         }
-        
         
         picker.dismiss(animated: true, completion: nil)
         

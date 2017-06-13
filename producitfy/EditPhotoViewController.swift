@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class EditPhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -14,6 +15,7 @@ class EditPhotoViewController: UIViewController, UIImagePickerControllerDelegate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         // Do any additional setup after loading the view.
     }
@@ -29,7 +31,7 @@ class EditPhotoViewController: UIViewController, UIImagePickerControllerDelegate
         picker.delegate = self
         
         picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
-        picker.allowsEditing = false
+        picker.allowsEditing = true
         
         self.present(picker, animated: true, completion: nil)
         
@@ -40,10 +42,25 @@ class EditPhotoViewController: UIViewController, UIImagePickerControllerDelegate
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             
             imageView.image = image
+            
+            let userid = Auth.auth().currentUser?.uid
+            
+            let storeRef = Storage.storage().reference().child("\(userid!)/image.png")
+            
+            let uploadData = UIImagePNGRepresentation(image)
+            
+            storeRef.putData(uploadData!, metadata: nil, completion:
+                { (metadata, error) in
+                    
+                    if error != nil {
+                        print("uload error \(error!)")
+                        return
+                    }
+                    
+                    print(metadata as Any)
+            })
         }
         
-        
-        print("hello")
         
         picker.dismiss(animated: true, completion: nil)
         

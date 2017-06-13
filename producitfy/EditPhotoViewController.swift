@@ -45,23 +45,60 @@ class EditPhotoViewController: UIViewController, UIImagePickerControllerDelegate
             
             imageView.image = image
             
-            let userid = Auth.auth().currentUser?.uid
+            let userId = Auth.auth().currentUser?.uid
             
             let name = self.activityNameLabel.text!
             
-            let storeRef = Storage.storage().reference().child("\(userid!)/\(name).png")
+            let storeRef = Storage.storage().reference().child("\(userId!)/\(name).png")
             
             let uploadData = UIImagePNGRepresentation(image)
+            
             
             storeRef.putData(uploadData!, metadata: nil, completion:
                 { (metadata, error) in
                     
                     if error != nil {
-                        print("uload error \(error!)")
+                        print("upload error \(error!)")
                         return
                     }
+                    print("find me!")
+                    print(userId!)
                     
-                    print(metadata as Any)
+                    
+                    // creating a reference to where info is stored
+                    let ref = Database.database().reference().child("preferene")
+                    
+                    if let meta = metadata?.downloadURL() {
+                        
+                        let imageInfo = [name : meta.description]
+                        
+                        // creats child with value userId and store userInfo under it
+                        ref.child(userId!).setValue(imageInfo, withCompletionBlock: { (error, DatabaseReference) in
+                            
+                            if error != nil {
+                                self.alertUser(title: "Saving image info detials error",
+                                               message: error!.localizedDescription)
+                                return
+                            }
+                            
+                            print("done!")
+                        })
+                        
+//                        ref.child(userId!).updateChildValues(imageInfo, withCompletionBlock: {
+//                            (error, reffrence) in
+//                            
+//                            if error != nil {
+//                                self.alertUser(title: "Saving image info detials error",
+//                                               message: error!.localizedDescription)
+//                                return
+//                            }
+//                            
+//                            print("done!")
+//                            
+//                        })
+                        
+                    }
+
             })
         }
         

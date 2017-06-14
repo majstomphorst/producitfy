@@ -68,8 +68,7 @@ class MainViewController: UIViewController {
         
         if let uid = Auth.auth().currentUser?.uid {
             
-            
-            Database.database().reference().child("preferene").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
+            Database.database().reference().child("preference").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
                 print("find me!")
                 print(snapshot)
                 
@@ -220,11 +219,9 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         
         let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
             
-            
             if error == nil {
                 // on the main thread
                 DispatchQueue.main.async {
-                    print("??")
                     // Assigning image data to Image placeholder
                     cell.iconImage.image = UIImage(data: data!)
                     
@@ -245,9 +242,14 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     // MARK: - UICollectionViewDelegate protocol
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        
         // handle tap event
         ActivityInfo.activityInfo.iconImage = "\(indexPath.row)"
-        ActivityInfo.activityInfo.iconLabel = "\(indexPath.row)"
+        // ActivityInfo.activityInfo.iconLabel = "\(indexPath.row)"
+        ActivityInfo.activityInfo.iconLabel = self.iconInfo[indexPath.row].label
+        print("find me!")
+        print(self.iconInfo[indexPath.row].label)
         
         self.activityCollection.cellForItem(at: indexPath)?.isHighlighted = true
         

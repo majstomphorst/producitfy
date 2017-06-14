@@ -37,64 +37,62 @@ class EditPhotoViewController: UIViewController, UIImagePickerControllerDelegate
         
         self.present(picker, animated: true, completion: nil)
         
-        print("taptap")
     }
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            
             imageView.image = image
             
             let userId = Auth.auth().currentUser?.uid
-            
             let name = self.activityNameLabel.text!
-            
             let storeRef = Storage.storage().reference().child("\(userId!)/\(name).png")
-            
+            let databaseRef = Database.database().reference().child("preference").child(userId!)
             let uploadData = UIImagePNGRepresentation(image)
-            
             
             storeRef.putData(uploadData!, metadata: nil, completion:
                 { (metadata, error) in
+                    
                     
                     if error != nil {
                         print("upload error \(error!)")
                         return
                     }
-                    print("find me!")
-                    print(userId!)
                     
-                    
-                    // creating a reference to where info is stored
-                    let ref = Database.database().reference().child("preferene")
-                    
-                    if let meta = metadata?.downloadURL() {
+                    DispatchQueue.main.async {
                         
-                        let imageInfo = [name : meta.description]
+                        print(metadata!.downloadURL()!)
                         
-                        // creats child with value userId and store userInfo under it
-                        ref.child(userId!).setValue(imageInfo, withCompletionBlock: { (error, DatabaseReference) in
+                        
+                        
+                        let imageInfo = [name: "\(metadata!.downloadURL()!)"]
+                        
+                        databaseRef.updateChildValues(imageInfo, withCompletionBlock: { (error, DatabaseReference) in
                             
                             if error != nil {
-                                self.alertUser(title: "Saving image info detials error",
-                                               message: error!.localizedDescription)
-                                return
+                                self.alertUser(title: "Saving image info detials error", message: error!.localizedDescription)
+                                                            return
                             }
-                            
+
                         })
+                    
                         
                     }
-
+                
+                    
             })
+            
+          picker.dismiss(animated: true, completion: nil)
+            
         }
         
-        picker.dismiss(animated: true, completion: nil)
-        
-    }
-    
+    }  
+
+
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
     }
+            
+
+
+
 }
-
-

@@ -55,6 +55,12 @@ class MainViewController: UIViewController {
         // check if user is signin or not
         if let userId = Auth.auth().currentUser?.uid {
             print(userId)
+            
+            let databaseRef = Database.database().reference().child("preference")
+            print("ME!!!")
+            print(type(of: databaseRef))
+            
+            
         } else {
             print("hello")
             performSegue(withIdentifier: "signinSegue", sender: nil)

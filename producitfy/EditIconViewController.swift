@@ -14,7 +14,6 @@ class EditIconViewController: UIViewController, UIImagePickerControllerDelegate,
     @IBOutlet weak var activityIconImage: UIImageView!
     @IBOutlet weak var activityNameLabel: UITextField!
     
-    
     let henk = ["Piet", "Klaas Vaak"]
 
     override func viewDidLoad() {
@@ -55,6 +54,15 @@ class EditIconViewController: UIViewController, UIImagePickerControllerDelegate,
         
         // red action button
         let storages = UIAlertAction(title: "Pick one from the app", style: UIAlertActionStyle.default) { (action) in
+            
+            let picker = UIImagePickerController()
+            picker.delegate = self
+            
+            picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
+            
+            self.present(picker, animated: true, completion: nil)
+            
+            
             print("Pick one from the app")
         }
         
@@ -71,6 +79,18 @@ class EditIconViewController: UIViewController, UIImagePickerControllerDelegate,
         self.present(myActionSheet, animated: true, completion: nil)
         
     }
+    
+    // if a image is selected with the image picker
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+        
+        }
+    }
+    
+    
+    
     
 
 }

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0B87F8F48EA2AD47774A91B7 /* Pods_producitfy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE785268695BE3A989BE4A59 /* Pods_producitfy.framework */; };
 		2805A5BB1EE6E71600694247 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2805A5BA1EE6E71600694247 /* GoogleService-Info.plist */; };
+		2805DEB31EF1B5FA006D0416 /* EditIconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2805DEB21EF1B5FA006D0416 /* EditIconViewController.swift */; };
+		2805DEB51EF1B744006D0416 /* EditIconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2805DEB41EF1B744006D0416 /* EditIconTableViewCell.swift */; };
 		28376AA21EE964DD0019A85D /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28376AA11EE964DD0019A85D /* SignInViewController.swift */; };
 		28376AA41EE968190019A85D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28376AA31EE968190019A85D /* RegisterViewController.swift */; };
 		28376AA61EE989180019A85D /* ViewController+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28376AA51EE989180019A85D /* ViewController+Error.swift */; };
@@ -30,6 +32,8 @@
 /* Begin PBXFileReference section */
 		149A42A97021528AFE8C0442 /* Pods-producitfy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-producitfy.release.xcconfig"; path = "Pods/Target Support Files/Pods-producitfy/Pods-producitfy.release.xcconfig"; sourceTree = "<group>"; };
 		2805A5BA1EE6E71600694247 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2805DEB21EF1B5FA006D0416 /* EditIconViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditIconViewController.swift; sourceTree = "<group>"; };
+		2805DEB41EF1B744006D0416 /* EditIconTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditIconTableViewCell.swift; sourceTree = "<group>"; };
 		28376AA11EE964DD0019A85D /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		28376AA31EE968190019A85D /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		28376AA51EE989180019A85D /* ViewController+Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Error.swift"; sourceTree = "<group>"; };
@@ -69,6 +73,7 @@
 			children = (
 				289A89121EE7384D003B9730 /* MyCollectionViewCell.swift */,
 				2891415B1EE8A4E7005EEDD9 /* TableViewCell.swift */,
+				2805DEB41EF1B744006D0416 /* EditIconTableViewCell.swift */,
 			);
 			name = CustomCells;
 			sourceTree = "<group>";
@@ -117,6 +122,7 @@
 				28376AA11EE964DD0019A85D /* SignInViewController.swift */,
 				28376AA31EE968190019A85D /* RegisterViewController.swift */,
 				285CC8201EEF12FC0074277D /* SettingsViewController.swift */,
+				2805DEB21EF1B5FA006D0416 /* EditIconViewController.swift */,
 				285CC81E1EEF12650074277D /* EditPhotoViewController.swift */,
 				28376A9D1EE955380019A85D /* CustomCells */,
 			);
@@ -289,11 +295,13 @@
 				289A89131EE7384D003B9730 /* MyCollectionViewCell.swift in Sources */,
 				28376AA21EE964DD0019A85D /* SignInViewController.swift in Sources */,
 				285CC81F1EEF12650074277D /* EditPhotoViewController.swift in Sources */,
+				2805DEB51EF1B744006D0416 /* EditIconTableViewCell.swift in Sources */,
 				287EDA5A1EE8374D0045693A /* HistoryViewController.swift in Sources */,
 				2891415C1EE8A4E7005EEDD9 /* TableViewCell.swift in Sources */,
 				285CC8211EEF12FC0074277D /* SettingsViewController.swift in Sources */,
 				28EA6B101EEC4235003932B5 /* ActivityInfo.swift in Sources */,
 				289141571EE89D0A005EEDD9 /* ConformationViewController.swift in Sources */,
+				2805DEB31EF1B5FA006D0416 /* EditIconViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

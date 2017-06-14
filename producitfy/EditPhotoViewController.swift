@@ -33,7 +33,6 @@ class EditPhotoViewController: UIViewController, UIImagePickerControllerDelegate
         picker.delegate = self
         
         picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
-        picker.allowsEditing = true
         
         self.present(picker, animated: true, completion: nil)
         
@@ -70,7 +69,7 @@ class EditPhotoViewController: UIViewController, UIImagePickerControllerDelegate
                             
                             if error != nil {
                                 self.alertUser(title: "Saving image info detials error", message: error!.localizedDescription)
-                                                            return
+                                return
                             }
 
                         })

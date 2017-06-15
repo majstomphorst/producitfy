@@ -31,6 +31,7 @@ class EditPhotoViewController: UIViewController, UIImagePickerControllerDelegate
         
         let picker = UIImagePickerController()
         picker.delegate = self
+        picker.allowsEditing = true
         
         picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
         
@@ -39,11 +40,14 @@ class EditPhotoViewController: UIViewController, UIImagePickerControllerDelegate
     }
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imageView.image = image
             
             let userId = Auth.auth().currentUser?.uid
+            
             let name = self.activityNameLabel.text!
+            
             let storeRef = Storage.storage().reference().child("\(userId!)/\(name).png")
             let databaseRef = Database.database().reference().child("preference").child(userId!)
             let uploadData = UIImagePNGRepresentation(image)

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class EditIconViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -32,6 +33,47 @@ class EditIconViewController: UIViewController, UIImagePickerControllerDelegate,
         }
         
         
+        let userId = Auth.auth().currentUser?.uid
+        
+        let name = self.activityNameLabel.text!
+        let image = activityIconImage.image
+        
+        let storeRef = Storage.storage().reference().child("\(userId!)/\(name).png")
+        let databaseRef = Database.database().reference().child("preference").child(userId!)
+        let uploadData = UIImagePNGRepresentation(image!)
+        
+        storeRef.putData(uploadData!, metadata: nil, completion:
+            { (metadata, error) in
+//                
+                
+                if error != nil {
+                    print("upload error \(error!)")
+                    return
+                }
+                
+                DispatchQueue.main.async {
+                    
+                    let imageInfo = [name: metadata?.downloadURL()!.absoluteString]
+                    
+                    databaseRef.updateChildValues(imageInfo as! [String: String], withCompletionBlock: { (error, DatabaseReference) in
+                        
+                        if error != nil {
+                            self.alertUser(title: "Saving image info detials error", message: error!.localizedDescription)
+                            return
+                        }
+                        
+                    })
+                    
+                    
+                }
+                
+                
+        })
+        
+        
+        
+        
+        
     }
     
     @IBAction func handletap(recognizer: UITapGestureRecognizer) {
@@ -44,26 +86,18 @@ class EditIconViewController: UIViewController, UIImagePickerControllerDelegate,
             
             let picker = UIImagePickerController()
             picker.delegate = self
+            picker.allowsEditing = true
             
             picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
             
             self.present(picker, animated: true, completion: nil)
             
-            print("Upload From Camararoll")
         }
         
         // red action button
         let storages = UIAlertAction(title: "Pick one from the app", style: UIAlertActionStyle.default) { (action) in
             
-            let picker = UIImagePickerController()
-            picker.delegate = self
-            
-            picker.sourceType = UIImagePickerControllerSourceType.photoLibrary
-            
-            self.present(picker, animated: true, completion: nil)
-            
-            
-            print("Pick one from the app")
+            self.alertUser(title: "no implementation yet", message: "to bad")
         }
         
         // cancel action button
@@ -76,6 +110,7 @@ class EditIconViewController: UIViewController, UIImagePickerControllerDelegate,
         myActionSheet.addAction(storages)
         myActionSheet.addAction(cancel)
         
+        // send user to the uiImage picerk view
         self.present(myActionSheet, animated: true, completion: nil)
         
     }
@@ -83,10 +118,14 @@ class EditIconViewController: UIViewController, UIImagePickerControllerDelegate,
     // if a image is selected with the image picker
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
-        
+        print("print me!")
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            
+            self.activityIconImage.image = image
         
         }
+        
+        picker.dismiss(animated: true, completion: nil)
     }
     
     

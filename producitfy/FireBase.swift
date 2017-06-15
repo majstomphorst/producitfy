@@ -11,24 +11,30 @@ import Firebase
 
 class Fire {
     
+    static let shared = Fire()
+    
+    private var userId = String()
+    private var dataRef = Database.database().reference()
+    private var storageRef = Storage.storage().reference()
     
     
-    var userId = String()
-    var dataRef = Database.database().reference()
-    var StorageRef = Storage.storage().reference()
-    
-    // get the user's signin ID
-    func getUsderId() -> Bool {
-        
-        if let userId = Auth.auth().currentUser?.uid {
-            self.userId = userId
-            return true
-        }
-        return false
-        
+    init() {
+        self.userId = self.getUsderId()
+        self.dataRef = Database.database().reference()
+        self.storageRef = Storage.storage().reference()
     }
     
-    func readDatabase() {
+    // get the user's signin ID
+    private func getUsderId() -> String {
+        
+        if let userId = Auth.auth().currentUser?.uid {
+            return userId
+        }
+        
+        return ""
+    }
+    
+    func readDatabase(Where: String, what: Dictionary<String, String>) {
         
     }
     
@@ -36,7 +42,39 @@ class Fire {
         
     }
     
-    func writeStorage() {
+    func StorePhoto(fileName: String, uploadData: UIImage) {
+        
+        let uploadData = UIImagePNGRepresentation(uploadData)
+        
+        let refference = storageRef.child(self.userId).child("\(fileName).png")
+        
+        refference.putData(uploadData!, metadata: nil, completion:
+            { (metadata, error) in
+                
+                if error != nil {
+                    print("upload error \(error!)")
+                    return
+                }
+                
+                // storing image succes
+                DispatchQueue.main.async {
+                    if let link = metadata?.downloadURL()?.absoluteString {
+                        
+                        let dataRef = self.dataRef.child(self.userId).child(fileName)
+                        
+                        let data = [fileName: link]
+                        
+                        
+                        
+                        
+                    }
+                }
+                
+                
+        })
+        
+        
+        
         
     }
     

@@ -10,6 +10,7 @@ import UIKit
 
 class EditIconTableViewCell: UITableViewCell {
     
+    // MARK: - Outlets
     @IBOutlet weak var activityIconImage: UIImageView!
     @IBOutlet weak var activityNameLabel: UILabel!
     

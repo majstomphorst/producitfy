@@ -10,6 +10,7 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
     
+    // MARK: - Outlets
     @IBOutlet weak var historyLabel: UILabel!
 
 }

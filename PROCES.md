@@ -72,5 +72,12 @@ En een online database is toch veel stoerder dan een suffe SQL database ;)
 - made a way to upload image to firebase
 - updated the collection view to import a users specifik images and label! 
 
- 
- 
+### Day 09/19 - 14/06/17
+1. Meeting
+ - Not pressent.
+2. App develpment
+ - Created a new design for uploading icons with activity's 
+ - Created a new class to set a the functions in a location. 
+ - Want to create a time struct so i can call Timer.start 
+Timer.pauze
+Timer.stop etc.

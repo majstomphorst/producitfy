@@ -14,13 +14,13 @@ class StopWatch {
     
     private var seconds = Int()
     private var timer = Timer()
-    private var isTimerRunning = false
+    private var isTimmerRunning = false
     private var pauzed = false
     
     private init () {
         self.seconds = Int()
         self.timer = Timer()
-        self.isTimerRunning = false
+        self.isTimmerRunning = false
         self.pauzed = false
     }
     
@@ -28,15 +28,12 @@ class StopWatch {
     func start(seconds: Int) {
         
         self.seconds = seconds
-        
-        if self.isTimerRunning {
-            // Timer is running
-            
-        } else {
+    
+        if self.isTimmerRunning == false {
             // Timer is not running
             self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(self.updateTimer)), userInfo: nil, repeats: true)
             
-            self.isTimerRunning = true
+            self.isTimmerRunning = true
             
         }
         
@@ -46,26 +43,34 @@ class StopWatch {
     func resumePause() {
         
         if self.pauzed {
-            timer.invalidate()
-            self.pauzed = true
-        } else {
             
+            self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: (#selector(self.updateTimer)), userInfo: nil, repeats: true)
+            
+            self.pauzed = false
+            
+        } else {
+
+            self.timer.invalidate()
+            self.pauzed = true
         }
-        
         
     }
     
     func cancel() {
+        self.isTimmerRunning = false
+        self.timer.invalidate()
+        self.timer = Timer()
         
     }
     
-    @objc func updateTimer() -> String {
+    @objc private func updateTimer() -> String {
         
         if seconds < 1 {
             //Send alert to indicate "time's up!"
             self.timer.invalidate()
             return "Time is up"
         } else {
+            
             self.seconds -= 1
             print(self.timeString(time: TimeInterval(self.seconds)))
             
@@ -75,7 +80,7 @@ class StopWatch {
         
     }
     
-    func timeString(time:TimeInterval) -> String {
+    private func timeString(time:TimeInterval) -> String {
         
         let hours = Int(time) / 3600
         let minutes = Int(time) / 60 % 60

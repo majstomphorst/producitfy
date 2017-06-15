@@ -32,7 +32,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eyp-X9-h5P" id="GT8-ue-68s">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nuM-ET-IpQ">
@@ -137,7 +137,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tCJ-Jw-vgM" id="ZTS-7u-VxS">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cvl-vF-tfo">
@@ -393,8 +393,27 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vaU-R8-dvI">
+                                        <rect key="frame" x="0.0" y="168" width="375" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YEi-oJ-ww2">
+                                                <rect key="frame" x="0.0" y="0.0" width="177.5" height="30"/>
+                                                <state key="normal" title="Cancel"/>
+                                                <connections>
+                                                    <action selector="cancel:" destination="khw-fI-BDn" eventType="touchUpInside" id="Ky2-Ri-Mz2"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gtV-5d-WVh">
+                                                <rect key="frame" x="197.5" y="0.0" width="177.5" height="30"/>
+                                                <state key="normal" title="Start"/>
+                                                <connections>
+                                                    <action selector="startRestume:" destination="khw-fI-BDn" eventType="touchUpInside" id="4tW-R6-HuJ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3VL-I6-wXQ" userLabel="todoText">
-                                        <rect key="frame" x="8" y="168" width="359" height="130"/>
+                                        <rect key="frame" x="8" y="203" width="359" height="95"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -442,11 +461,13 @@
                                 <constraints>
                                     <constraint firstItem="CDu-bB-loH" firstAttribute="leading" secondItem="XKF-Yq-65B" secondAttribute="leading" constant="8" id="3ZH-3V-o9Y"/>
                                     <constraint firstAttribute="trailing" secondItem="azA-LH-CxG" secondAttribute="trailing" constant="8" id="K4b-Pq-gmV"/>
+                                    <constraint firstAttribute="trailing" secondItem="vaU-R8-dvI" secondAttribute="trailing" id="Kcs-WH-x2u"/>
                                     <constraint firstItem="azA-LH-CxG" firstAttribute="leading" secondItem="XKF-Yq-65B" secondAttribute="leading" constant="8" id="NrD-iP-4qY"/>
                                     <constraint firstAttribute="trailing" secondItem="eCq-is-CEz" secondAttribute="trailing" constant="8" id="OJ5-Oa-kyn"/>
                                     <constraint firstItem="OzN-LC-Eyz" firstAttribute="leading" secondItem="XKF-Yq-65B" secondAttribute="leading" constant="8" id="OOY-D4-1zs"/>
                                     <constraint firstItem="eCq-is-CEz" firstAttribute="leading" secondItem="XKF-Yq-65B" secondAttribute="leading" constant="8" id="PeC-9I-ozi"/>
                                     <constraint firstAttribute="trailing" secondItem="3VL-I6-wXQ" secondAttribute="trailing" constant="8" id="QU2-cf-3ee"/>
+                                    <constraint firstItem="vaU-R8-dvI" firstAttribute="leading" secondItem="XKF-Yq-65B" secondAttribute="leading" id="W4j-Q6-TWD"/>
                                     <constraint firstItem="3VL-I6-wXQ" firstAttribute="leading" secondItem="XKF-Yq-65B" secondAttribute="leading" constant="8" id="evH-aG-LSp"/>
                                     <constraint firstAttribute="trailing" secondItem="OzN-LC-Eyz" secondAttribute="trailing" constant="8" id="iN7-UE-Aax"/>
                                     <constraint firstAttribute="trailing" secondItem="CDu-bB-loH" secondAttribute="trailing" constant="8" id="yKc-nz-JrG"/>
@@ -470,6 +491,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="activityCollection" destination="OzN-LC-Eyz" id="ij7-81-Ig6"/>
+                        <outlet property="cancelButton" destination="YEi-oJ-ww2" id="Zi2-5L-svJ"/>
+                        <outlet property="startRestumButton" destination="gtV-5d-WVh" id="Zue-jO-eoH"/>
                         <outlet property="timePicker" destination="eCq-is-CEz" id="67X-Yk-vtk"/>
                         <outlet property="timerLabel" destination="CDu-bB-loH" id="41X-sA-Q1w"/>
                         <outlet property="todoText" destination="3VL-I6-wXQ" id="OcR-9i-zJm"/>

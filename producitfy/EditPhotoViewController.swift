@@ -59,13 +59,9 @@ class EditPhotoViewController: UIViewController, UIImagePickerControllerDelegate
                     
                     DispatchQueue.main.async {
                         
-                        print(metadata!.downloadURL()!)
-                        
-                        
-                        
-                        let imageInfo = [name: "\(metadata!.downloadURL()!)"]
-                        
-                        databaseRef.updateChildValues(imageInfo, withCompletionBlock: { (error, DatabaseReference) in
+                        let imageInfo = [name: metadata?.downloadURL()!.absoluteString]
+                    
+                        databaseRef.updateChildValues(imageInfo as! [String: String], withCompletionBlock: { (error, DatabaseReference) in
                             
                             if error != nil {
                                 self.alertUser(title: "Saving image info detials error", message: error!.localizedDescription)

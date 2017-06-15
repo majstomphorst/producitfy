@@ -34,6 +34,8 @@ struct IconInfo {
 class MainViewController: UIViewController {
     
     //MARK - Outlets
+    @IBOutlet weak var startRestumButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var timePicker: UIDatePicker!
     @IBOutlet weak var activityCollection: UICollectionView!
@@ -52,6 +54,7 @@ class MainViewController: UIViewController {
     
     
     override func viewDidAppear(_ animated: Bool) {
+        self.cancelButton.isEnabled = false
         
 
         
@@ -107,6 +110,43 @@ class MainViewController: UIViewController {
     
     
     // MARK: - Actions
+    
+    @IBAction func startRestume(_ sender: Any) {
+       
+        if self.startRestumButton.currentTitle! == "Pause" {
+            
+            StopWatch.shared.resumePause()
+            
+            self.startRestumButton.setTitle("Resume", for: UIControlState.normal)
+            
+            
+        } else {
+            
+            StopWatch.shared.start(seconds: Int(self.timePicker.countDownDuration))
+            
+            
+            self.cancelButton.isEnabled = true
+            self.startRestumButton.setTitle("Pause", for: UIControlState.normal)
+            
+            
+            
+            
+        }
+        
+        
+        
+        
+        
+    }
+    
+    @IBAction func cancel(_ sender: Any) {
+        self.cancelButton.isEnabled = false
+        self.startRestumButton.setTitle("Start", for: UIControlState.normal)
+    }
+    
+    
+    
+    
     @IBAction func returnToMainView(segue: UIStoryboardSegue) {}
     
     

@@ -11,16 +11,20 @@ import Firebase
 
 class Fire {
     
+    
+    
     var userId = String()
     var dataRef = Database.database().reference()
     var StorageRef = Storage.storage().reference()
     
     // get the user's signin ID
-    func getUsderId() {
+    func getUsderId() -> Bool {
         
         if let userId = Auth.auth().currentUser?.uid {
             self.userId = userId
+            return true
         }
+        return false
         
     }
     

@@ -28,6 +28,7 @@ struct IconInfo {
 //        
 //        return UIImage
 //    }
+    
 }
 
 class MainViewController: UIViewController {
@@ -52,17 +53,14 @@ class MainViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         
+
+        
         // check if user is signin or not
         if let userId = Auth.auth().currentUser?.uid {
             print(userId)
-            
-            let databaseRef = Database.database().reference().child("preference")
-            print("ME!!!")
-            print(type(of: databaseRef))
-            
-            
+
+
         } else {
-            print("hello")
             performSegue(withIdentifier: "signinSegue", sender: nil)
         }
         
@@ -75,12 +73,7 @@ class MainViewController: UIViewController {
         if let uid = Auth.auth().currentUser?.uid {
             
             Database.database().reference().child("preference").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
-                print("find me!")
-                print(snapshot)
-                
-                print("find me!02")
-                print(snapshot.key)
-            
+      
                 if let imagdict = snapshot.value as? Dictionary<String, String> {
                     print(imagdict.keys)
                     
@@ -133,9 +126,14 @@ class MainViewController: UIViewController {
     
     @IBAction func startButton(_ sender: Any) {
         
+        
+        // Start the timer with the time in the time picker
+        StopWatch.shared.start(seconds: Int(timePicker.countDownDuration))
+        
         seconds = Int(timePicker.countDownDuration)
+        
         ActivityInfo.activityInfo.time = seconds
-        print(todoText.text!)
+        
         ActivityInfo.activityInfo.todo = todoText.text!
         
         
@@ -254,7 +252,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
         ActivityInfo.activityInfo.iconImage = "\(indexPath.row)"
         // ActivityInfo.activityInfo.iconLabel = "\(indexPath.row)"
         ActivityInfo.activityInfo.iconLabel = self.iconInfo[indexPath.row].label
-        print("find me!")
+    
         print(self.iconInfo[indexPath.row].label)
         
         self.activityCollection.cellForItem(at: indexPath)?.isHighlighted = true

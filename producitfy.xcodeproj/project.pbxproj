@@ -28,6 +28,7 @@
 		2891415C1EE8A4E7005EEDD9 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2891415B1EE8A4E7005EEDD9 /* TableViewCell.swift */; };
 		289A89131EE7384D003B9730 /* MyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289A89121EE7384D003B9730 /* MyCollectionViewCell.swift */; };
 		28EA6B101EEC4235003932B5 /* ActivityInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28EA6B0F1EEC4235003932B5 /* ActivityInfo.swift */; };
+		28F10F721EF277FA004EA001 /* StopWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F10F711EF277FA004EA001 /* StopWatch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		2891415B1EE8A4E7005EEDD9 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		289A89121EE7384D003B9730 /* MyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCollectionViewCell.swift; sourceTree = "<group>"; };
 		28EA6B0F1EEC4235003932B5 /* ActivityInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityInfo.swift; sourceTree = "<group>"; };
+		28F10F711EF277FA004EA001 /* StopWatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopWatch.swift; sourceTree = "<group>"; };
 		923C61F2D62644005CE33DCC /* Pods-producitfy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-producitfy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-producitfy/Pods-producitfy.debug.xcconfig"; sourceTree = "<group>"; };
 		DE785268695BE3A989BE4A59 /* Pods_producitfy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_producitfy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -144,6 +146,7 @@
 			children = (
 				28EA6B0F1EEC4235003932B5 /* ActivityInfo.swift */,
 				2805DEB61EF1C528006D0416 /* FireBase.swift */,
+				28F10F711EF277FA004EA001 /* StopWatch.swift */,
 			);
 			name = "Structs / classes";
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28F10F721EF277FA004EA001 /* StopWatch.swift in Sources */,
 				286E173C1EE6CE7600C52810 /* MainViewController.swift in Sources */,
 				28376AA41EE968190019A85D /* RegisterViewController.swift in Sources */,
 				286E173A1EE6CE7600C52810 /* AppDelegate.swift in Sources */,
